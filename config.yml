@@ -25,6 +25,7 @@ collections:
             widget: object
             fields:
               - { label: Logo (obraz), name: logo, widget: image, required: false, hint: "Najlepiej PNG z przezroczystym tłem, poziome. Puste = wyświetla się nazwa tekstem." }
+              - { label: Ikona strony (favicon), name: favicon, widget: image, required: false, hint: "Kwadrat PNG, min. 192×192 px. Widać ją w karcie przeglądarki i w Google. Puste = ikona domyślna." }
               - { label: Nazwa (tekst w logo i na stronie powitalnej), name: site_name, widget: string }
               - { label: Podpis pod nazwą na stronie powitalnej, name: site_sub, widget: string }
               - { label: Tekst przycisku powitalnego, name: welcome_button, widget: string }

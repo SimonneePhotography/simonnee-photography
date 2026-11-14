@@ -1,13 +1,851 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Panel Simonnee Photography</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simonnee Photography | Fotograf Warszawa: śluby, chrzty, sesje w całej Polsce</title>
+<meta name="description" content="Fotograf z Warszawy, działam w całej Polsce. Fotografia ślubna, chrzty, imprezy urodzinowe, reportaże z imprez i wydarzeń sportowych, sesje indywidualne. Zobacz prace i zapytaj o termin.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml" id="fav">
+<link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="canonical" href="https://simonneephotography.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Simonnee Photography">
+<meta property="og:title" content="Simonnee Photography | Fotograf Warszawa">
+<meta property="og:description" content="Śluby, chrzty, imprezy, reportaże i sesje indywidualne. Fotograf z Warszawy, działający w całej Polsce.">
+<meta property="og:url" content="https://simonneephotography.com/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json" id="ld">{"@context": "https://schema.org", "@type": "Photographer", "name": "Simonnee Photography", "url": "https://simonneephotography.com/", "description": "Fotograf z Warszawy działający w całej Polsce: śluby, chrzty, imprezy urodzinowe, reportaże z imprez i wydarzeń sportowych, sesje indywidualne.", "email": "simonneephotography@gmail.com", "inLanguage": "pl", "address": {"@type": "PostalAddress", "addressLocality": "Warszawa", "addressCountry": "PL"}, "areaServed": [{"@type": "Country", "name": "Polska"}, {"@type": "City", "name": "Warszawa"}], "sameAs": ["https://www.instagram.com/simonnee_photography/", "https://www.facebook.com/SimonneePhotography/"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Układ: ekran powitalny, nagłówek z czterema stronami (Prace, Usługi, Opinie, FAQ), wspólny formularz kontaktowy na dole. Galeria to siatka równych kadrów 4:5. */
+:root{
+  --bg:#0E0E0D;
+  --ink:#ECE8E0;
+  --muted:#8F8A80;
+  --line:#2A2926;
+  --accent:#E5583C;
+  --on-accent:#0E0E0D;
+  --font-display:"Jost","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Jost","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(16px,3.5vw,48px);
+  --gap:clamp(10px,1.6vw,22px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.65}
+body.locked{overflow:hidden}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--font-display);font-weight:300;line-height:1.05;letter-spacing:-.03em;margin:0;text-wrap:balance}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Ekran powitalny */
+.welcome{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;background:var(--bg);clip-path:circle(160vmax at var(--cx,50%) var(--cy,50%));transition:clip-path 1.15s cubic-bezier(.7,0,.2,1)}
+.welcome.go{clip-path:circle(0px at var(--cx,50%) var(--cy,50%))}
+.welcome[hidden]{display:none}
+.w-inner{display:grid;justify-items:center;gap:clamp(48px,10vh,96px);padding:24px;text-align:center}
+.w-name{font-family:var(--font-display);font-weight:300;font-size:clamp(56px,11vw,150px);line-height:.95;letter-spacing:-.04em;margin:0}
+.w-sub{display:block;margin-top:16px;font-family:var(--font-body);font-style:normal;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted)}
+.welcome.go .w-name{transition:opacity .5s ease,transform .8s ease;opacity:0;transform:translateY(-12px)}
+.enter{position:relative;display:inline-flex;align-items:center;gap:20px;padding:clamp(22px,3vw,30px) clamp(30px,5vw,60px);border-radius:999px;border:1px solid var(--accent);background:transparent;color:var(--ink);font:300 clamp(22px,3.2vw,34px)/1 var(--font-display);cursor:pointer;transition:background .35s,color .35s,transform .35s}
+.enter::before,.enter::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:1px solid var(--accent);pointer-events:none;animation:ring 3s ease-out infinite}
+.enter::after{animation-delay:1.5s}
+.enter:hover{background:var(--accent);color:var(--on-accent);transform:scale(1.04)}
+.enter .arr{display:inline-block;font-style:normal;animation:nudge 1.9s ease-in-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.15,1.7);opacity:0}}
+@keyframes nudge{50%{transform:translateX(8px)}}
+
+/* Animacje wejścia */
+.reveal{animation:rise 1s .55s cubic-bezier(.2,.7,.2,1) both}
+.page:not([hidden]){animation:pagein .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pagein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Nagłówek z nawigacją */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:flex-start;gap:20px;min-height:72px}
+.bar .logo{margin-right:auto}
+.logo img{display:block;height:28px;width:auto}
+.logo{font-family:var(--font-display);font-weight:400;font-size:20px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;line-height:1}
+.social{display:flex;align-items:center;gap:4px;margin-left:clamp(8px,1.5vw,20px)}
+.social a{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;color:var(--muted);transition:color .2s,background .2s}
+.social a:hover{color:var(--ink);background:rgba(236,232,224,.07)}
+nav ul{display:flex;gap:clamp(18px,3vw,36px);list-style:none;margin:0;padding:0;font-size:14px}
+nav li{white-space:nowrap}
+nav a{display:inline-block;padding:6px 0;text-decoration:none;color:var(--muted);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* Strony */
+.page{padding:clamp(32px,5vw,72px) 0 0}
+.page-title{font-size:clamp(48px,8vw,112px);letter-spacing:-.025em}
+.page-lead{margin-top:20px;color:var(--muted);max-width:46ch}
+.page-head{margin-bottom:clamp(40px,6vw,80px)}
+#prace{padding-top:clamp(12px,2vw,28px)}
+
+/* Galeria: równe kadry w symetrycznej siatce */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin:0;padding:0;list-style:none}
+.gallery li{margin:0}
+.frame{position:relative;display:block;margin:0;aspect-ratio:3/2;overflow:hidden;background:var(--g)}
+.frame::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--x,50%) var(--y,50%),rgba(255,236,200,.5),transparent 30%)}
+.frame::after{content:"";position:absolute;inset:0;opacity:.25;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.g1{--g:linear-gradient(180deg,#2b3a55 0%,#8a5a64 48%,#e39a6d 80%,#f4c98f 100%)}
+.g2{--g:linear-gradient(180deg,#d4d8d2 0%,#8e9b94 60%,#3d4642 100%)}
+.g3{--g:radial-gradient(120% 90% at 40% 30%,#f0c488 0%,#b8693a 52%,#3a2314 100%)}
+.g4{--g:linear-gradient(180deg,#b3cdd3 0%,#5a8896 52%,#1d3a46 100%)}
+.g5{--g:linear-gradient(180deg,#0e1020 0%,#2a2150 58%,#85405f 100%)}
+.g6{--g:linear-gradient(135deg,#dedbd5 0%,#8f8c86 58%,#2c2b29 100%)}
+.g7{--g:linear-gradient(160deg,#e9d8bd 0%,#c49a6c 60%,#6b4a31 100%)}
+.g8{--g:linear-gradient(180deg,#9fb08a 0%,#4d6b4a 55%,#18261a 100%)}
+.g9{--g:radial-gradient(110% 90% at 60% 25%,#f3c7c0 0%,#b86a78 55%,#3b1f2b 100%)}
+.g10{--g:linear-gradient(180deg,#9aa7b5 0%,#4a5a6e 60%,#1a212b 100%)}
+.g11{--g:linear-gradient(180deg,#1a1410 0%,#6b3a1e 55%,#f0a34f 100%)}
+.g12{--g:linear-gradient(180deg,#f0f2f4 0%,#b9c3cc 60%,#68788a 100%)}
+
+/* Prawdziwe zdjęcia */
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.frame.has-img{background:#1b1a18}
+.frame.has-img::before,.frame.has-img::after{display:none}
+.filters[hidden]{display:none}
+
+/* Kategorie */
+.filters{display:flex;flex-wrap:wrap;gap:6px 30px;margin:0 0 clamp(24px,3vw,40px)}
+.filters button{background:none;border:0;border-bottom:1px solid transparent;padding:6px 0;color:var(--muted);font:500 14px var(--font-body);cursor:pointer;transition:color .2s,border-color .2s}
+.filters button:hover{color:var(--ink)}
+.filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.filters .count{margin-left:6px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.gallery li[hidden]{display:none}
+.gallery li:not([hidden]){animation:pagein .55s cubic-bezier(.2,.7,.2,1) both}
+
+/* Kafelek sesji: po najechaniu przyciemnienie i wyśrodkowana nazwa */
+.tile{text-decoration:none;color:var(--ink)}
+.tile-label{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;text-align:center;background:rgba(14,14,13,.64);opacity:0;transition:opacity .45s ease;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.tile-label b{font-family:var(--font-display);font-weight:300;font-size:clamp(22px,2.6vw,36px);line-height:1.05;letter-spacing:-.02em;transform:translateY(10px);transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.tile-label small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,232,224,.75);transform:translateY(10px);transition:transform .55s .06s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .tile-label,.tile:focus-visible .tile-label,.tile:active .tile-label,.tile.show .tile-label{opacity:1}
+.tile:hover .tile-label b,.tile:hover .tile-label small,.tile:focus-visible .tile-label b,.tile:focus-visible .tile-label small,.tile:active .tile-label b,.tile:active .tile-label small,.tile.show .tile-label b,.tile.show .tile-label small{transform:none}
+
+/* Podstrona sesji */
+.back{display:inline-block;margin-bottom:clamp(24px,4vw,48px);color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s}
+.back:hover{color:var(--ink)}
+.meta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.pn{display:flex;justify-content:space-between;gap:24px;margin-top:clamp(48px,7vw,96px);padding-top:28px;border-top:1px solid var(--line)}
+.pn a{display:grid;gap:4px;text-decoration:none;max-width:48%}
+.pn a small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pn a span{font-family:var(--font-display);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.1;letter-spacing:-.02em;transition:color .2s}
+.pn a:hover span{color:var(--accent)}
+.pn a:last-child{text-align:right;margin-left:auto}
+
+/* Usługi */
+.svc{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 150px;gap:24px;align-items:baseline;padding:32px 0}
+.svc h2{font-size:clamp(28px,3.4vw,44px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.svc p{color:var(--muted)}
+.svc .price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;transition:color .4s}
+
+/* Opinie */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(36px,5vw,72px) clamp(28px,4vw,56px)}
+.quotes figure{position:relative;margin:0;padding-top:24px}
+.quotes blockquote{transition:transform .5s cubic-bezier(.2,.7,.2,1);margin:0 0 20px;font-family:var(--font-display);font-weight:300;font-size:clamp(22px,2.1vw,27px);line-height:1.3;letter-spacing:-.01em}
+cite{font-style:normal;font-size:14px;color:var(--muted)}
+
+/* Animacje stron Usługi i Opinie: tytuł, kolejne wiersze i linie rysujące się od lewej */
+.page-title{animation:titlein 1.1s cubic-bezier(.2,.7,.2,1) backwards}
+.page-lead{animation:rowin .9s .15s cubic-bezier(.2,.7,.2,1) backwards}
+.svc,.quotes figure{animation:rowin .9s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*.1s + .25s)}
+.svc::before,.quotes figure::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line);transform-origin:left center;transition:background .4s;animation:draw 1.2s cubic-bezier(.6,0,.2,1) backwards;animation-delay:calc(var(--i,0)*.1s + .15s)}
+@keyframes rowin{from{opacity:0;transform:translateY(28px)}}
+@keyframes titlein{from{opacity:0;transform:translateY(32px);letter-spacing:.02em}}
+@keyframes draw{from{transform:scaleX(0)}}
+@media (hover:hover){
+  .svc:hover::before,.quotes figure:hover::before{background:var(--accent)}
+  .svc:hover h2{transform:translateX(14px)}
+  .svc:hover .price{color:var(--accent)}
+  .quotes figure:hover blockquote{transform:translateY(-6px)}
+}
+
+/* FAQ */
+.faq-list{max-width:820px}
+details{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-display);font-weight:300;font-size:32px;line-height:1;color:var(--accent);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 26px;max-width:62ch}
+
+/* Kontakt na dole każdej strony */
+.cta{margin-top:clamp(64px,9.6vw,134px);padding:clamp(51px,7.2vw,102px) 0 clamp(64px,9vw,128px);scroll-margin-top:72px}
+.cta h2{font-size:clamp(44px,8vw,112px);letter-spacing:-.025em;max-width:12ch}
+.mail{text-decoration:none;display:inline-block;margin-top:clamp(24px,4vw,40px);font-family:var(--font-display);font-weight:300;font-size:clamp(22px,3.4vw,42px);letter-spacing:-.02em;color:var(--accent);overflow-wrap:anywhere}
+form{display:grid;gap:28px;margin-top:clamp(40px,6vw,72px);max-width:640px}
+.field{display:grid;gap:4px}
+label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+input,textarea{width:100%;font:400 18px var(--font-body);color:var(--ink);background:transparent;border:0;border-bottom:1px solid #4a4741;padding:10px 0;border-radius:0}
+textarea{resize:vertical;min-height:100px}
+input::placeholder,textarea::placeholder{color:#6f6b62}
+input:focus-visible,textarea:focus-visible{outline:0;border-bottom-color:var(--accent)}
+/* Kalendarz terminu */
+.datefield{position:relative}
+.datefield input{cursor:pointer;padding-right:34px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%238F8A80' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='16' rx='2'/><path d='M3 10h18M8 3v4M16 3v4'/></svg>") no-repeat right 4px center}
+.cal{position:absolute;z-index:30;left:0;top:calc(100% + 8px);width:min(332px,100%);padding:16px;background:#1A1917;border:1px solid #3a3834;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.cal[hidden]{display:none}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.cal-head strong{font-family:var(--font-display);font-weight:400;font-size:20px;text-transform:capitalize}
+.cal-nav{width:36px;height:36px;border-radius:50%;border:1px solid #3a3834;background:none;color:var(--ink);font:500 16px var(--font-body);cursor:pointer;transition:border-color .2s,color .2s}
+.cal-nav:hover:not(:disabled){border-color:var(--ink)}
+.cal-nav:disabled{color:#55524b;cursor:not-allowed}
+.cal-dow,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-dow{margin-bottom:6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.day{aspect-ratio:1;border:1px solid transparent;border-radius:50%;background:none;color:var(--ink);font:400 15px var(--font-body);cursor:pointer;padding:0;transition:border-color .15s,background .15s}
+.day:hover:not(:disabled){border-color:var(--ink)}
+.day:disabled{color:#55524b;cursor:not-allowed}
+.day.busy{text-decoration:line-through;opacity:.55}
+.day.today{border-color:#6b675e}
+.day[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.cal-foot{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid #2e2c28}
+.cal-link{background:none;border:0;padding:4px 0;color:var(--muted);font:400 14px var(--font-body);cursor:pointer;text-decoration:underline}
+.cal-link:hover{color:var(--ink)}
+fieldset.field{border:0;margin:0;padding:0;min-width:0}
+legend{padding:0;margin-bottom:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:10px}
+.chip{position:relative;display:block;cursor:pointer}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+.chip span{display:flex;align-items:center;justify-content:center;height:100%;min-height:52px;padding:10px 12px;border:1px solid #4a4741;border-radius:26px;text-align:center;font-size:15px;line-height:1.25;letter-spacing:0;text-transform:none;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.chip:hover span{border-color:var(--ink)}
+.chip input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chip input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
+.btn{justify-self:start;padding:16px 34px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font:500 16px/1 var(--font-body);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--ink)}
+.status{min-height:1.5em;font-size:15px;color:var(--muted)}
+
+.policy{max-width:760px}
+.policy h2{font-family:var(--font-display);font-weight:400;font-size:clamp(18px,2vw,22px);margin:2.2em 0 .6em;letter-spacing:-.01em}
+.policy h2:first-child{margin-top:0}
+.policy p{color:var(--muted);line-height:1.75;margin:0 0 1em;font-weight:300}
+.credit{margin:28px 0 0;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
+.foot a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.foot a:hover{color:var(--ink)}
+footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .quotes{grid-template-columns:repeat(2,1fr)}
+  .svc{grid-template-columns:1fr;gap:6px;padding:28px 0}
+  .svc .price{text-align:left}
+}
+@media (max-width:520px){
+  .chips{grid-template-columns:repeat(2,1fr)}
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+  .filters button{justify-self:start;text-align:left}
+  .filters button:first-child{grid-column:1/-1}
+  .chip span{font-size:14px;padding:8px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .bar{flex-wrap:wrap;gap:4px 20px;padding-top:14px;padding-bottom:6px}
+  .social{order:2;margin-left:0}
+  nav{order:3}
+  nav{width:100%;overflow-x:auto;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav ul{gap:22px}
+  .quotes{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
 </head>
-<body>
-  <!-- Sveltia CMS: panel do edycji treści. Konfiguracja w admin/config.yml -->
-  <script src="https://unpkg.com/@sveltia/cms@0.128.5/dist/sveltia-cms.js"></script>
+<body class="locked">
+
+<!-- EKRAN POWITALNY -->
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Simonnee Photography, ekran powitalny">
+  <div class="w-inner">
+    <p class="w-name"><span id="w-name-t">Simonnee</span><span class="w-sub" id="w-sub-t">Photography</span></p>
+    <button class="enter" id="enter" type="button"><span id="enter-t">Witaj w moim świecie</span> <span class="arr" aria-hidden="true">→</span></button>
+  </div>
+</div>
+
+<div id="site">
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#prace" aria-label="Simonnee Photography, strona główna">Simonnee</a>
+    <nav aria-label="Menu główne">
+      <ul>
+        <li><a href="#prace" data-page="prace">Prace</a></li>
+        <li><a href="#uslugi" data-page="uslugi">Usługi</a></li>
+        <li><a href="#opinie" data-page="opinie">Opinie</a></li>
+        <li><a href="#faq" data-page="faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="social">
+      <a id="soc-ig" href="https://www.instagram.com/simonnee_photography/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Simonnee Photography">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg>
+      </a>
+      <a id="soc-fb" href="https://www.facebook.com/SimonneePhotography/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Simonnee Photography">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v4H8v7h4v-7h2.8l.7-4H12V7.5a.5.5 0 0 1 .5-.5H15z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="views">
+
+  <!-- STRONA: PRACE -->
+  <div class="page" id="prace" data-title="Prace">
+    <div class="wrap">
+      <h1 class="sr">Simonnee Photography: fotograf z Warszawy, działający w całej Polsce</h1>
+      <div class="filters" id="filters" role="group" aria-label="Kategorie zdjęć"></div>
+      <ul class="gallery" id="gallery" aria-label="Sesje zdjęciowe"></ul>
+      <p class="page-lead" id="prace-empty" hidden>Wkrótce pojawią się tu nowe sesje.</p>
+    </div>
+  </div>
+
+  <!-- STRONA: USŁUGI -->
+  <div class="page" id="uslugi" data-title="Usługi" hidden>
+    <div class="wrap">
+      <div class="page-head">
+        <h1 class="page-title">Usługi</h1>
+        <p class="page-lead" id="lead-uslugi">Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.</p>
+      </div>
+      <div id="svc-list"></div>
+    </div>
+  </div>
+
+  <!-- STRONA: OPINIE -->
+  <div class="page" id="opinie" data-title="Opinie" hidden>
+    <div class="wrap">
+      <div class="page-head">
+        <h1 class="page-title">Opinie</h1>
+        <p class="page-lead" id="lead-opinie">Co mówią o mnie klienci.</p>
+      </div>
+      <div class="quotes" id="quotes"></div>
+    </div>
+  </div>
+
+  <!-- STRONA: FAQ -->
+  <div class="page" id="faq" data-title="FAQ" hidden>
+    <div class="wrap">
+      <div class="page-head">
+        <h1 class="page-title">Pytania</h1>
+        <p class="page-lead" id="lead-faq">Najczęstsze pytania przed pierwszą rozmową.</p>
+      </div>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </div>
+
+  <!-- STRONA: POLITYKA -->
+  <div class="page" id="polityka" data-title="Polityka" hidden>
+    <div class="wrap">
+      <div class="page-head">
+        <h1 class="page-title" id="pol-title">Polityka prywatności</h1>
+        <p class="page-lead" id="pol-upd"></p>
+      </div>
+      <div class="policy" id="pol-body"></div>
+    </div>
+  </div>
+
+  <!-- STRONA: SESJA (wypełniana skryptem) -->
+  <div class="page" id="sesja" hidden>
+    <div class="wrap">
+      <a class="back" href="#prace">← Wszystkie prace</a>
+      <div class="page-head">
+        <p class="meta" id="s-meta"></p>
+        <h1 class="page-title" id="s-title"></h1>
+      </div>
+      <div class="gallery" id="s-grid"></div>
+      <nav class="pn" aria-label="Inne sesje z tej kategorii">
+        <a id="s-prev" href="#prace"></a>
+        <a id="s-next" href="#prace"></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTAKT: wspólny, na dole każdej strony -->
+  <section id="kontakt" class="cta" aria-labelledby="h-cta">
+    <div class="wrap">
+      <h2 id="h-cta">Stwórzmy coś, co przetrwa.</h2>
+      <a class="mail" id="mail" href="mailto:simonneephotography@gmail.com">simonneephotography@gmail.com</a>
+      <form id="enquiry" novalidate>
+        <div class="field"><label for="f-name">Imię i nazwisko</label><input id="f-name" type="text" autocomplete="name" placeholder="Jak mam się do Ciebie zwracać?"></div>
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email" placeholder="ty@email.pl"></div>
+        <fieldset class="field">
+          <legend>Usługa</legend>
+          <div class="chips" id="chips"></div>
+        </fieldset>
+        <div class="field datefield">
+          <label for="f-date">Termin</label>
+          <input id="f-date" type="text" readonly autocomplete="off" placeholder="Wybierz datę w kalendarzu" aria-haspopup="dialog" aria-expanded="false" aria-controls="cal">
+          <div class="cal" id="cal" role="dialog" aria-label="Wybór terminu" hidden>
+            <div class="cal-head">
+              <button type="button" class="cal-nav" id="cal-prev" aria-label="Poprzedni miesiąc">←</button>
+              <strong id="cal-title" aria-live="polite"></strong>
+              <button type="button" class="cal-nav" id="cal-next" aria-label="Następny miesiąc">→</button>
+            </div>
+            <div class="cal-dow" aria-hidden="true"><span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span><span>So</span><span>Nd</span></div>
+            <div class="cal-days" id="cal-days"></div>
+            <div class="cal-foot">
+              <button type="button" class="cal-link" id="cal-clear">Wyczyść</button>
+              <button type="button" class="cal-link" id="cal-close">Zamknij</button>
+            </div>
+          </div>
+        </div>
+        <div class="field"><label for="f-msg">Kilka słów o Waszym dniu</label><textarea id="f-msg" placeholder="Gdzie, z kim i co jest dla Ciebie najważniejsze"></textarea></div>
+        <input type="checkbox" id="f-bot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+        <button class="btn" type="submit" id="f-submit">Wyślij zapytanie</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span id="foot-c">© 2026 Simonnee Photography</span>
+    <a href="#polityka" id="foot-pol">Polityka prywatności i prawa autorskie</a>
+  </div>
+  <p class="credit">Created by Unruled Pixels</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var welcome=document.getElementById('welcome'),
+      site=document.getElementById('site'),
+      views=document.getElementById('views'),
+      enter=document.getElementById('enter');
+
+  /* Ekran powitalny i przejście */
+  site.setAttribute('inert','');
+  enter.focus();
+  enter.addEventListener('click',function(){
+    var r=enter.getBoundingClientRect();
+    welcome.style.setProperty('--cx',(r.left+r.width/2)+'px');
+    welcome.style.setProperty('--cy',(r.top+r.height/2)+'px');
+    site.removeAttribute('inert');
+    window.scrollTo(0,0);
+    document.body.classList.remove('locked');
+    views.classList.add('reveal');
+    welcome.classList.add('go');
+    setTimeout(function(){ welcome.hidden=true; },1250);
+  });
+
+  /* Dane z content/*.json (edytowane w panelu /admin). Gdy się nie wczytają, np. po otwarciu pliku z dysku, strona używa danych przykładowych. */
+  var FALLBACK={"sessions":[{"name":"Anna i Marek","category":"Śluby","place":"Mazury","date":"2025-09-15","photos":[]},{"name":"Chrzest Antosia","category":"Chrzty","place":"Warszawa","date":"2025-04-15","photos":[]},{"name":"Urodziny Zosi","category":"Imprezy urodzinowe","place":"Warszawa","date":"2025-03-15","photos":[]},{"name":"Gala Atelier Nord","category":"Reportaże z imprez","place":"Warszawa","date":"2024-11-15","photos":[]},{"name":"Maraton Warszawski","category":"Reportaże z wydarzeń sportowych","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Magda S.","category":"Sesje indywidualne","place":"Studio","date":"2025-02-15","photos":[]},{"name":"Kasia i Tomek","category":"Śluby","place":"Kraków","date":"2025-06-15","photos":[]},{"name":"Chrzest Leny","category":"Chrzty","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Osiemnastka Mai","category":"Imprezy urodzinowe","place":"Łódź","date":"2025-04-15","photos":[]},{"name":"Wieczór panieński","category":"Reportaże z imprez","place":"Sopot","date":"2025-06-15","photos":[]},{"name":"Turniej piłkarski","category":"Reportaże z wydarzeń sportowych","place":"Łódź","date":"2025-06-15","photos":[]},{"name":"Światło z okna","category":"Sesje indywidualne","place":"Studio","date":"2025-01-15","photos":[]},{"name":"Ola i Bartek","category":"Śluby","place":"Gdańsk","date":"2025-08-15","photos":[]},{"name":"Chrzest Jasia","category":"Chrzty","place":"Poznań","date":"2025-06-15","photos":[]},{"name":"Czterdziestka Tomka","category":"Imprezy urodzinowe","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Piknik firmowy","category":"Reportaże z imprez","place":"Poznań","date":"2024-09-15","photos":[]},{"name":"Bieg górski","category":"Reportaże z wydarzeń sportowych","place":"Zakopane","date":"2025-08-15","photos":[]},{"name":"Portret biznesowy","category":"Sesje indywidualne","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Karolina i Piotr","category":"Śluby","place":"Zakopane","date":"2024-10-15","photos":[]},{"name":"Chrzest Hani","category":"Chrzty","place":"Gdynia","date":"2025-08-15","photos":[]},{"name":"Urodziny Franka","category":"Imprezy urodzinowe","place":"Sopot","date":"2025-07-15","photos":[]},{"name":"Koncert w Browarze","category":"Reportaże z imprez","place":"Poznań","date":"2025-10-15","photos":[]},{"name":"Regaty","category":"Reportaże z wydarzeń sportowych","place":"Gdynia","date":"2025-07-15","photos":[]},{"name":"Tomek","category":"Sesje indywidualne","place":"Studio","date":"2025-03-15","photos":[]},{"name":"Ewa i Paweł","category":"Śluby","place":"Toskania","date":"2025-05-15","photos":[]},{"name":"Chrzest Stasia","category":"Chrzty","place":"Lublin","date":"2025-03-15","photos":[]},{"name":"Pięćdziesiątka Ani","category":"Imprezy urodzinowe","place":"Poznań","date":"2025-09-15","photos":[]},{"name":"Sylwester w Krakowie","category":"Reportaże z imprez","place":"Kraków","date":"2024-12-15","photos":[]},{"name":"Mecz ligowy","category":"Reportaże z wydarzeń sportowych","place":"Wrocław","date":"2025-10-15","photos":[]},{"name":"Ania w lesie","category":"Sesje indywidualne","place":"Puszcza Białowieska","date":"2024-11-15","photos":[]},{"name":"Marta i Jakub","category":"Śluby","place":"Wrocław","date":"2024-07-15","photos":[]},{"name":"Chrzest bliźniaków","category":"Chrzty","place":"Łódź","date":"2025-10-15","photos":[]},{"name":"Roczek Julki","category":"Imprezy urodzinowe","place":"Wrocław","date":"2025-11-15","photos":[]},{"name":"Jubileusz firmy","category":"Reportaże z imprez","place":"Gdańsk","date":"2025-05-15","photos":[]},{"name":"Zawody pływackie","category":"Reportaże z wydarzeń sportowych","place":"Poznań","date":"2025-03-15","photos":[]},{"name":"Julia nad morzem","category":"Sesje indywidualne","place":"Hel","date":"2025-08-15","photos":[]}],"services":[{"name":"Śluby","description":"Od przygotowań po ostatni taniec. Reportaż, drugi fotograf i kilka spokojnych portretów. Galeria online i album artystyczny.","price":"od 7 900 zł"},{"name":"Chrzty","description":"Uroczystość w kościele i przyjęcie w domu lub restauracji. Spokojny reportaż, portrety rodzinne i galeria online.","price":"od 1 800 zł"},{"name":"Imprezy urodzinowe","description":"Urodziny dzieci i dorosłych, od domowych przyjęć po duże wieczory. Naturalne ujęcia gości i szybka galeria.","price":"od 1 500 zł"},{"name":"Reportaże z imprez","description":"Gale, imprezy firmowe, koncerty i wieczory tematyczne. Reportaż z całego wydarzenia i szybka dostawa zdjęć.","price":"od 2 500 zł"},{"name":"Reportaże z wydarzeń sportowych","description":"Biegi, turnieje i zawody. Dynamiczne ujęcia zawodników, kibiców i atmosfery, z szybką dostawą zdjęć dla organizatora.","price":"od 2 000 zł"},{"name":"Sesje indywidualne","description":"Portret w studiu, w domu lub w plenerze. Swobodna sesja bez sztywnych póz i ponad 20 obrobionych zdjęć.","price":"od 900 zł"}],"testimonials":[{"quote":"Zapomnieliśmy, że ktoś robi zdjęcia, a każde ujęcie wygląda dokładnie tak, jak czuł się ten dzień.","author":"Anna i Marek","context":"ślub"},{"quote":"Spokojna, zabawna i świetnie zorganizowana. Cała rodzina rozluźniła się po pięciu minutach.","author":"Julia K.","context":"chrzest"},{"quote":"Całą galerię z gali dostaliśmy po czterech dniach, a każdy kadr nadawał się do użycia.","author":"Tomasz W.","context":"Atelier Nord, reportaż z imprezy"},{"quote":"Plener w górach zaplanowany co do minuty, a mimo to czuliśmy się zupełnie swobodnie.","author":"Karolina i Piotr","context":"ślub"},{"quote":"Pierwszy raz podobam się sobie na zdjęciach. Dziękuję za cierpliwość i dobre światło.","author":"Magda S.","context":"sesja indywidualna"},{"quote":"Galeria przyszła szybciej, niż obiecano, a babcia już zamówiła odbitki dla całej rodziny.","author":"Ola i Bartek","context":"ślub"}],"faq":[{"q":"Z jakim wyprzedzeniem warto rezerwować?","a":"Śluby zwykle 9–12 miesięcy wcześniej, zwłaszcza letnie piątki i soboty. Sesje portretowe i dla marek często udaje się umówić w 2–3 tygodnie."},{"q":"Jak wyglądają zaliczka i płatność?","a":"Termin rezerwuje zaliczka 30% i podpisana umowa. Resztę wpłacacie dwa tygodnie przed sesją. Przy ślubach możliwe są raty."},{"q":"Kiedy dostanę zdjęcia?","a":"Zapowiedź 15–20 zdjęć w 72 godziny. Galerie portretowe po dwóch tygodniach, ślubne po sześciu do ośmiu."},{"q":"Czy dojeżdżasz?","a":"Tak, pracuję w całej Europie i dalej. Koszty podróży wyceniam jawnie, a sesje w promieniu godziny od studia nie mają dopłaty."},{"q":"Czy mogę drukować i udostępniać zdjęcia?","a":"Dostajecie osobistą licencję na odbitki, albumy i media społecznościowe. Użycie komercyjne obejmują pakiety editorial i dla marek."},{"q":"Co, jeśli będzie padać?","a":"Deszcz robi piękne zdjęcia. Przy sesjach plenerowych możemy raz bezpłatnie zmienić termin, jeśli prognoza jest zła."}],"settings":{"site_name":"Simonnee","site_sub":"Photography","logo":"","welcome_button":"Witaj w moim świecie","lead_uslugi":"Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.","lead_opinie":"Co mówią o mnie klienci.","lead_faq":"Najczęstsze pytania przed pierwszą rozmową.","contact_heading":"Stwórzmy coś, co przetrwa.","email":"simonneephotography@gmail.com","instagram":"https://www.instagram.com/simonnee_photography/","facebook":"https://www.facebook.com/SimonneePhotography/","submit_label":"Wyślij zapytanie","success_message":"Dziękuję, wiadomość wysłana. Odpowiem w ciągu jednego dnia roboczego.","form_key":"de5f782a-c06e-4197-9d45-72dc8dc19351"},"policy":{"title":"Polityka prywatności i prawa autorskie","updated":"12 listopada 2026","sections":[{"heading":"1. Administrator danych","body":"Administratorem danych osobowych jest [IMIĘ I NAZWISKO LUB NAZWA FIRMY], prowadzący działalność pod nazwą Simonnee Photography, adres: [ADRES], NIP: [NIP].\n\nKontakt w sprawach danych osobowych: simonneephotography@gmail.com."},{"heading":"2. Jakie dane zbieramy i po co","body":"Formularz kontaktowy: imię i nazwisko, adres e-mail, wybrana usługa, termin oraz treść wiadomości. Przetwarzamy je, aby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. b i f RODO).\n\nDane z formularza przechowujemy do czasu zakończenia rozmowy lub realizacji usługi, a następnie przez okres potrzebny do ewentualnych roszczeń i obowiązków podatkowych. Jeśli do współpracy nie dojdzie, usuwamy je w ciągu 12 miesięcy.\n\nNie prowadzimy kont użytkowników i nie wysyłamy newslettera."},{"heading":"3. Komu przekazujemy dane","body":"Wiadomości z formularza są przekazywane przez usługę Web3Forms na adres e-mail administratora. Web3Forms działa jako podmiot przetwarzający i może przechowywać zgłoszenia przez ograniczony czas.\n\nStrona jest hostowana na GitHub Pages (GitHub, Inc.), a poczta obsługiwana przez Google (Gmail). Podmioty te mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym na podstawie standardowych klauzul umownych lub innych mechanizmów zgodnych z RODO.\n\nStrona korzysta z czcionki Jost ładowanej z serwerów Google Fonts, przez co adres IP odwiedzającego może zostać przekazany Google."},{"heading":"4. Pliki cookies i statystyki","body":"Strona nie używa własnych plików cookies, nie stosuje narzędzi analitycznych ani reklamowych i nie śledzi odwiedzających."},{"heading":"5. Twoje prawa","body":"Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu wobec przetwarzania. Napisz na adres e-mail podany powyżej.\n\nMasz też prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (uodo.gov.pl). Podanie danych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na zapytanie."},{"heading":"6. Prawa autorskie","body":"Wszystkie zdjęcia, teksty i grafiki na tej stronie są utworami chronionymi prawem autorskim (ustawa z 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych). © Simonnee Photography. Wszelkie prawa zastrzeżone.\n\nBez pisemnej zgody autora zabronione jest kopiowanie, publikowanie, modyfikowanie, sprzedawanie oraz wykorzystywanie zdjęć w celach komercyjnych, w tym do szkolenia systemów sztucznej inteligencji."},{"heading":"7. Wizerunek osób na zdjęciach","body":"Zdjęcia z sesji publikujemy na stronie za zgodą osób fotografowanych. Jeśli chcesz, aby zdjęcie z Twoim wizerunkiem zostało usunięte, napisz na adres e-mail podany powyżej, a zrobimy to niezwłocznie."}]},"blocked":[]};
+  var CATEGORY_ORDER=['Śluby','Chrzty','Imprezy urodzinowe','Reportaże z imprez','Reportaże z wydarzeń sportowych','Sesje indywidualne'];
+  var MONTHS=['styczeń','luty','marzec','kwiecień','maj','czerwiec','lipiec','sierpień','wrzesień','październik','listopad','grudzień'];
+
+  function el(tag,cls,text){
+    var n=document.createElement(tag);
+    if(cls) n.className=cls;
+    if(text!=null) n.textContent=text;
+    return n;
+  }
+  function loadJSON(url,key){
+    return fetch(url,{cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ return Array.isArray(j[key])?j[key]:FALLBACK[key]; })
+      .catch(function(){ return FALLBACK[key]; });
+  }
+  function loadSettings(){
+    return fetch('content/settings.json',{cache:'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ return Object.assign({},FALLBACK.settings,j.settings||{}); })
+      .catch(function(){ return FALLBACK.settings; });
+  }
+  var CFG=FALLBACK.settings;
+  function applySettings(c){
+    CFG=c;
+    function t(id,v){ var n=document.getElementById(id); if(n&&v) n.textContent=v; }
+    t('w-name-t',c.site_name); t('w-sub-t',c.site_sub); t('enter-t',c.welcome_button);
+    t('lead-uslugi',c.lead_uslugi); t('lead-opinie',c.lead_opinie); t('lead-faq',c.lead_faq);
+    t('h-cta',c.contact_heading); t('f-submit',c.submit_label);
+    var logo=document.querySelector('.logo');
+    if(c.favicon){ document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function(l){ l.href=c.favicon; l.removeAttribute('type'); }); }
+    if(c.logo){ var im=document.createElement('img'); im.src=c.logo; im.alt=c.site_name+' '+c.site_sub; logo.textContent=''; logo.appendChild(im); }
+    else { logo.textContent=c.site_name; logo.setAttribute('aria-label',c.site_name+' '+c.site_sub+', strona główna'); }
+    if(c.email){ var m=document.getElementById('mail'); m.textContent=c.email; m.href='mailto:'+c.email; }
+    [['soc-ig',c.instagram],['soc-fb',c.facebook]].forEach(function(p){
+      var a=document.getElementById(p[0]); if(!a) return;
+      if(p[1]) a.href=p[1]; else a.hidden=true;
+    });
+  }
+  function updateLD(services){
+    try{
+      var n=document.getElementById('ld'), d=JSON.parse(n.textContent);
+      d.hasOfferCatalog={'@type':'OfferCatalog',name:'Usługi fotograficzne',itemListElement:services.filter(function(x){ return x&&x.name; }).map(function(x){
+        return {'@type':'Offer',itemOffered:{'@type':'Service',name:x.name,description:x.description||'',areaServed:'Polska'}};
+      })};
+      d.email=CFG.email||d.email;
+      n.textContent=JSON.stringify(d);
+    }catch(e){}
+  }
+  function renderFaq(list){
+    var box=document.getElementById('faq-list'); box.textContent='';
+    list.forEach(function(it,i){
+      if(!it||!it.q) return;
+      var d=document.createElement('details'); if(i===0) d.open=true;
+      d.appendChild(el('summary',null,it.q)); d.appendChild(el('p',null,it.a||''));
+      box.appendChild(d);
+    });
+  }
+  function renderPolicy(p){
+    if(!p) return;
+    var t=document.getElementById('pol-title'); if(p.title) t.textContent=p.title;
+    document.getElementById('foot-pol').textContent=p.title||'Polityka prywatności';
+    document.getElementById('pol-upd').textContent=p.updated?'Ostatnia aktualizacja: '+p.updated:'';
+    var box=document.getElementById('pol-body'); box.textContent='';
+    (p.sections||[]).forEach(function(sec){
+      if(!sec) return;
+      if(sec.heading) box.appendChild(el('h2',null,sec.heading));
+      String(sec.body||'').split(/\n\s*\n/).forEach(function(par){ if(par.trim()) box.appendChild(el('p',null,par.trim())); });
+    });
+  }
+  function slug(t){
+    return String(t).toLowerCase().replace(/ł/g,'l').normalize('NFD').replace(/[̀-ͯ]/g,'')
+      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'sesja';
+  }
+  function niceDate(d){
+    var m=/^(\d{4})-(\d{2})/.exec(d||'');
+    return m ? MONTHS[+m[2]-1]+' '+m[1] : (d||'');
+  }
+  function photoList(p){
+    return (p||[]).map(function(x){ return typeof x==='string'?x:(x&&x.image)||''; }).filter(Boolean);
+  }
+  function plural(n){
+    if(n===1) return n+' zdjęcie';
+    var d=n%10, h=n%100;
+    return n+((d>=2&&d<=4&&(h<12||h>14))?' zdjęcia':' zdjęć');
+  }
+
+  /* Sesje: kafelek prowadzi do podstrony #sesja-<id> ze wszystkimi zdjęciami sesji */
+  var sessions=[], byId={}, byCat={};
+  var gallery=document.getElementById('gallery'), filters=document.getElementById('filters');
+
+  function buildSessions(list){
+    var seen={}, order=[];
+    sessions=[]; byId={}; byCat={};
+    list.forEach(function(r,idx){
+      if(!r||!r.name) return;
+      var base=slug(r.name), id=base, k=2;
+      while(seen[id]){ id=base+'-'+k; k++; }
+      seen[id]=true;
+      var s={id:id,name:r.name,cat:r.category||'Inne',
+             info:[r.place,niceDate(r.date)].filter(Boolean).join(', '),
+             photos:photoList(r.photos),
+             g:(idx*5)%12+1, x:30+((idx*37)%45), y:22+((idx*29)%55)};
+      sessions.push(s); byId[id]=s;
+      if(!byCat[s.cat]){ byCat[s.cat]=[]; order.push(s.cat); }
+      s.i=byCat[s.cat].length; byCat[s.cat].push(s);
+    });
+    order.sort(function(a,b){
+      var x=CATEGORY_ORDER.indexOf(a), y=CATEGORY_ORDER.indexOf(b);
+      return (x<0?99:x)-(y<0?99:y);
+    });
+
+    gallery.textContent=''; filters.textContent='';
+    sessions.forEach(function(s){
+      var li=document.createElement('li'); li.setAttribute('data-cat',s.cat);
+      var a=document.createElement('a');
+      a.className='frame tile g'+s.g+(s.photos.length?' has-img':'');
+      a.href='#sesja-'+s.id;
+      a.style.setProperty('--x',s.x+'%'); a.style.setProperty('--y',s.y+'%');
+      a.setAttribute('aria-label','Sesja '+s.name+' ('+s.cat.toLowerCase()+'), zobacz wszystkie zdjęcia');
+      if(s.photos.length){
+        var im=document.createElement('img');
+        im.src=s.photos[0]; im.alt=s.cat+': '+s.name+(s.info?', '+s.info:''); im.loading='lazy'; im.decoding='async';
+        a.appendChild(im);
+      }
+      var lab=el('span','tile-label');
+      lab.appendChild(el('b',null,s.name));
+      lab.appendChild(el('small',null,s.cat));
+      a.appendChild(lab); li.appendChild(a); gallery.appendChild(li);
+    });
+    [{name:'Wszystkie',n:sessions.length}].concat(order.map(function(c){ return {name:c,n:byCat[c].length}; })).forEach(function(c,idx){
+      var btn=document.createElement('button');
+      btn.type='button';
+      btn.setAttribute('aria-pressed',idx===0?'true':'false');
+      btn.setAttribute('data-filter',idx===0?'':c.name);
+      btn.appendChild(document.createTextNode(c.name));
+      btn.appendChild(el('span','count',String(c.n)));
+      filters.appendChild(btn);
+    });
+    filters.hidden = order.length<2;
+    document.getElementById('prace-empty').hidden = sessions.length>0;
+  }
+  filters.addEventListener('click',function(e){
+    var btn=e.target.closest('button'); if(!btn) return;
+    var f=btn.getAttribute('data-filter');
+    filters.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed',x===btn?'true':'false'); });
+    Array.prototype.forEach.call(gallery.children,function(li){
+      li.hidden = f!=='' && li.getAttribute('data-cat')!==f;
+    });
+  });
+
+  /* Ekrany dotykowe: pierwszy dotyk pokazuje nazwę sesji, drugi otwiera podstronę */
+  var noHover=window.matchMedia('(hover: none)');
+  function clearShow(){
+    gallery.querySelectorAll('.tile.show').forEach(function(x){ x.classList.remove('show'); });
+  }
+  gallery.addEventListener('click',function(e){
+    var a=e.target.closest('.tile'); if(!a) return;
+    if(noHover.matches && !a.classList.contains('show')){
+      e.preventDefault();
+      clearShow();
+      a.classList.add('show');
+    }
+  });
+  document.addEventListener('click',function(e){ if(!e.target.closest('.tile')) clearShow(); });
+
+  /* Podstrona sesji */
+  var sTitle=document.getElementById('s-title'), sMeta=document.getElementById('s-meta'),
+      sGrid=document.getElementById('s-grid'), sPrev=document.getElementById('s-prev'), sNext=document.getElementById('s-next');
+  function navLink(a,label,s){
+    a.href='#sesja-'+s.id; a.textContent='';
+    a.appendChild(el('small',null,label));
+    a.appendChild(el('span',null,s.name));
+  }
+  function renderSession(s){
+    var n=s.photos.length;
+    sTitle.textContent=s.name;
+    sMeta.textContent=[s.cat,s.info,n?plural(n):''].filter(Boolean).join(' · ');
+    sGrid.textContent='';
+    if(n){
+      s.photos.forEach(function(src,k){
+        var f=el('div','frame has-img');
+        var im=document.createElement('img');
+        im.src=src; im.alt=s.cat+': '+s.name+', zdjęcie '+(k+1)+' z '+n; im.loading='lazy'; im.decoding='async';
+        f.appendChild(im); sGrid.appendChild(f);
+      });
+    } else {
+      for(var k=0;k<6;k++){
+        var f=el('div','frame g'+s.g);
+        f.setAttribute('role','img');
+        f.setAttribute('aria-label','Zaślepka zdjęcia '+(k+1)+', sesja '+s.name);
+        f.style.setProperty('--x',(25+((k*41+s.i*7)%55))+'%');
+        f.style.setProperty('--y',(20+((k*27+s.i*13)%60))+'%');
+        f.style.backgroundSize=(150+(k%3)*25)+'%';
+        f.style.backgroundPosition=((k*37)%100)+'% '+((k*53)%100)+'%';
+        sGrid.appendChild(f);
+      }
+    }
+    var list=byCat[s.cat];
+    document.querySelector('.pn').style.display = list.length>1 ? '' : 'none';
+    navLink(sPrev,'Poprzednia sesja',list[(s.i+list.length-1)%list.length]);
+    navLink(sNext,'Następna sesja',list[(s.i+1)%list.length]);
+  }
+
+  /* Usługi, opinie i przyciski usług w formularzu */
+  function renderServices(list){
+    var box=document.getElementById('svc-list'); box.textContent='';
+    var n=0;
+    list.forEach(function(sv){
+      if(!sv||!sv.name) return;
+      var a=el('article','svc');
+      a.style.setProperty('--i',Math.min(n++,8));
+      a.appendChild(el('h2',null,sv.name));
+      a.appendChild(el('p',null,sv.description||''));
+      a.appendChild(el('span','price',sv.price||''));
+      box.appendChild(a);
+    });
+  }
+  function renderQuotes(list){
+    var box=document.getElementById('quotes'); box.textContent='';
+    var n=0;
+    list.forEach(function(q){
+      if(!q||!q.quote) return;
+      var f=document.createElement('figure');
+      f.style.setProperty('--i',Math.min(n++,8));
+      f.appendChild(el('blockquote',null,q.quote));
+      f.appendChild(el('cite',null,[q.author,q.context].filter(Boolean).join(', ')));
+      box.appendChild(f);
+    });
+  }
+  function renderChips(list){
+    var box=document.getElementById('chips'); box.textContent='';
+    list.map(function(sv){ return sv&&sv.name; }).filter(Boolean).forEach(function(name,i){
+      var id='f-svc-'+(i+1);
+      var lab=el('label','chip'); lab.htmlFor=id;
+      var inp=document.createElement('input');
+      inp.type='radio'; inp.name='service'; inp.id=id; inp.value=name;
+      lab.appendChild(inp); lab.appendChild(el('span',null,name));
+      box.appendChild(lab);
+    });
+  }
+
+  /* Strony: routing po hashu (#prace, #uslugi, #opinie, #faq, #sesja-<id>). #kontakt tylko przewija do formularza. */
+  var pages=['prace','uslugi','opinie','faq','polityka','sesja'], current='prace', savedY=0;
+  var links=document.querySelectorAll('nav a[data-page]');
+
+  function setNav(name){
+    var active=name==='sesja'?'prace':name;
+    links.forEach(function(a){
+      if(a.getAttribute('data-page')===active) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  function show(name){
+    var prev=current;
+    if(prev==='prace' && name!=='prace') savedY=window.scrollY;
+    clearShow();
+    pages.forEach(function(p){ document.getElementById(p).hidden=true; });
+    void views.offsetWidth;
+    document.getElementById(name).hidden=false;
+    setNav(name);
+    document.body.setAttribute('data-page',name);
+    current=name;
+    window.scrollTo({top:(name==='prace' && prev==='sesja')?savedY:0,behavior:'instant'});
+  }
+  function route(){
+    var h=location.hash.replace('#','');
+    if(h.indexOf('sesja-')===0){
+      var s=byId[h.slice(6)];
+      if(s){ renderSession(s); show('sesja'); }
+      return;
+    }
+    if(h==='') h='prace';
+    if(pages.indexOf(h)>-1 && h!=='sesja' && h!==current) show(h);
+  }
+  window.addEventListener('hashchange',route);
+  setNav(current);
+  document.body.setAttribute('data-page',current);
+  route();
+
+  Promise.all([
+    loadJSON('content/sessions.json','sessions'),
+    loadJSON('content/services.json','services'),
+    loadJSON('content/testimonials.json','testimonials'),
+    loadJSON('content/faq.json','faq'),
+    loadSettings(),
+    loadJSON('content/availability.json','blocked'),
+    fetch('content/policy.json',{cache:'no-cache'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ return j.policy; }).catch(function(){ return FALLBACK.policy; })
+  ]).then(function(r){
+    applySettings(r[4]);
+    var names=r[1].map(function(x){ return x&&x.name; }).filter(Boolean);
+    if(names.length) CATEGORY_ORDER=names;
+    buildSessions(r[0]); renderServices(r[1]); renderQuotes(r[2]); renderChips(r[1]); updateLD(r[1]); renderFaq(r[3]); setBlocked(r[5]); renderPolicy(r[6]);
+    route();
+  });
+
+  /* Kalendarz terminu */
+  var MONTHS=['styczeń','luty','marzec','kwiecień','maj','czerwiec','lipiec','sierpień','wrzesień','październik','listopad','grudzień'];
+  var MONTHS_GEN=['stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'];
+  var dateInput=document.getElementById('f-date'), cal=document.getElementById('cal'),
+      calDays=document.getElementById('cal-days'), calTitle=document.getElementById('cal-title'),
+      calPrev=document.getElementById('cal-prev'), calNext=document.getElementById('cal-next');
+  var today=new Date(); today.setHours(0,0,0,0);
+  var thisMonth=new Date(today.getFullYear(),today.getMonth(),1);
+  var view=new Date(thisMonth), picked=null, BLOCKED=[];
+  function dayNum(dt){ return dt.getFullYear()*10000+(dt.getMonth()+1)*100+dt.getDate(); }
+  function isBusy(dt){ var n=dayNum(dt); return BLOCKED.some(function(r){ return n>=r[0] && n<=r[1]; }); }
+  function setBlocked(list){
+    BLOCKED=[];
+    (list||[]).forEach(function(r){
+      if(!r||!r.from) return;
+      var a=parseInt(String(r.from).slice(0,10).replace(/-/g,''),10), b=r.to?parseInt(String(r.to).slice(0,10).replace(/-/g,''),10):a;
+      if(a>0 && b>=a) BLOCKED.push([a,b]);
+    });
+    if(!cal.hidden) renderCal();
+  }
+
+  function sameDay(a,b){ return a&&b&&a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate(); }
+  function renderCal(){
+    var y=view.getFullYear(), m=view.getMonth();
+    calTitle.textContent=MONTHS[m]+' '+y;
+    calPrev.disabled = view<=thisMonth;
+    calDays.textContent='';
+    var lead=(new Date(y,m,1).getDay()+6)%7, n=new Date(y,m+1,0).getDate();
+    for(var i=0;i<lead;i++) calDays.appendChild(document.createElement('span'));
+    for(var d=1;d<=n;d++){
+      var date=new Date(y,m,d), b=document.createElement('button');
+      b.type='button'; b.className='day'+(sameDay(date,today)?' today':'');
+      b.textContent=d;
+      b.disabled = date<today || isBusy(date);
+      if(isBusy(date) && date>=today){ b.classList.add('busy'); }
+      b.setAttribute('aria-label',d+' '+MONTHS_GEN[m]+' '+y+(isBusy(date)?' (termin zajęty)':''));
+      b.setAttribute('aria-pressed',sameDay(date,picked)?'true':'false');
+      (function(dt){ b.addEventListener('click',function(){
+        picked=dt;
+        dateInput.value=dt.getDate()+' '+MONTHS_GEN[dt.getMonth()]+' '+dt.getFullYear();
+        closeCal(true);
+      }); })(date);
+      calDays.appendChild(b);
+    }
+  }
+  function openCal(){
+    if(picked) view=new Date(picked.getFullYear(),picked.getMonth(),1);
+    renderCal();
+    cal.hidden=false;
+    dateInput.setAttribute('aria-expanded','true');
+    var t=calDays.querySelector('[aria-pressed="true"]')||calDays.querySelector('.day:not(:disabled)');
+    if(t) t.focus({preventScroll:true});
+    cal.scrollIntoView({block:'nearest'});
+  }
+  function closeCal(refocus){
+    cal.hidden=true;
+    dateInput.setAttribute('aria-expanded','false');
+    if(refocus) dateInput.focus({preventScroll:true});
+  }
+  dateInput.addEventListener('click',function(){ if(cal.hidden) openCal(); else closeCal(false); });
+  dateInput.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '||e.key==='ArrowDown'){ e.preventDefault(); if(cal.hidden) openCal(); }
+  });
+  calPrev.addEventListener('click',function(){ view=new Date(view.getFullYear(),view.getMonth()-1,1); renderCal(); });
+  calNext.addEventListener('click',function(){ view=new Date(view.getFullYear(),view.getMonth()+1,1); renderCal(); });
+  document.getElementById('cal-clear').addEventListener('click',function(){ picked=null; dateInput.value=''; closeCal(true); });
+  document.getElementById('cal-close').addEventListener('click',function(){ closeCal(true); });
+  cal.addEventListener('keydown',function(e){ if(e.key==='Escape'){ e.preventDefault(); closeCal(true); } });
+  document.addEventListener('mousedown',function(e){
+    if(!cal.hidden && !e.target.closest('.datefield')) closeCal(false);
+  });
+
+  /* Formularz: klucz Web3Forms (content/settings.json -> form_key) sprawia, że wiadomości trafiają na e-mail */
+  var form=document.getElementById('enquiry'), status=document.getElementById('status');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('f-name').value.trim();
+    var email=document.getElementById('f-email').value.trim();
+    var svc=form.querySelector('input[name="service"]:checked');
+    var date=document.getElementById('f-date').value.trim();
+    var msg=document.getElementById('f-msg').value.trim();
+    if(!name||!/^\S+@\S+\.\S+$/.test(email)){
+      status.textContent='Podaj imię i nazwisko oraz poprawny adres e-mail.';
+      return;
+    }
+    if(picked && isBusy(picked)){ status.textContent='Ten termin jest już zajęty. Wybierz inny.'; return; }
+    if(!svc){
+      status.textContent='Wybierz usługę, której dotyczy zapytanie.';
+      return;
+    }
+    if(document.getElementById('f-bot').checked){ status.textContent=CFG.success_message; return; }
+    if(!CFG.form_key){
+      status.textContent='Formularz nie jest jeszcze podłączony. Napisz na '+CFG.email+' i podaj usługę ('+svc.value+')'+(date?' oraz termin ('+date+').':' oraz termin.');
+      return;
+    }
+    status.textContent='Wysyłam…';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({access_key:CFG.form_key,subject:'Zapytanie ze strony: '+svc.value,from_name:'Strona Simonnee Photography',
+        name:name,email:email,usluga:svc.value,termin:date||'(nie podano)',message:msg||'(brak wiadomości)'})})
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok||j.success===false) throw new Error(j.message||r.status); }); })
+      .then(function(){
+        status.textContent=CFG.success_message;
+        form.reset(); picked=null;
+      })
+      .catch(function(){
+        status.textContent='Nie udało się wysłać wiadomości. Napisz na '+CFG.email+'.';
+      });
+  });
+})();
+</script>
 </body>
 </html>
