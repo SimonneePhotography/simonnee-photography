@@ -1,0 +1,256 @@
+{
+  "sessions": [
+    {
+      "name": "Anna i Marek",
+      "category": "Śluby",
+      "place": "Mazury",
+      "date": "2025-09-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest Antosia",
+      "category": "Chrzty",
+      "place": "Warszawa",
+      "date": "2025-04-15",
+      "photos": []
+    },
+    {
+      "name": "Urodziny Zosi",
+      "category": "Imprezy urodzinowe",
+      "place": "Warszawa",
+      "date": "2025-03-15",
+      "photos": []
+    },
+    {
+      "name": "Gala Atelier Nord",
+      "category": "Reportaże z imprez",
+      "place": "Warszawa",
+      "date": "2024-11-15",
+      "photos": []
+    },
+    {
+      "name": "Maraton Warszawski",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Warszawa",
+      "date": "2025-09-15",
+      "photos": []
+    },
+    {
+      "name": "Magda S.",
+      "category": "Sesje indywidualne",
+      "place": "Studio",
+      "date": "2025-02-15",
+      "photos": []
+    },
+    {
+      "name": "Kasia i Tomek",
+      "category": "Śluby",
+      "place": "Kraków",
+      "date": "2025-06-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest Leny",
+      "category": "Chrzty",
+      "place": "Kraków",
+      "date": "2025-05-15",
+      "photos": []
+    },
+    {
+      "name": "Osiemnastka Mai",
+      "category": "Imprezy urodzinowe",
+      "place": "Łódź",
+      "date": "2025-04-15",
+      "photos": []
+    },
+    {
+      "name": "Wieczór panieński",
+      "category": "Reportaże z imprez",
+      "place": "Sopot",
+      "date": "2025-06-15",
+      "photos": []
+    },
+    {
+      "name": "Turniej piłkarski",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Łódź",
+      "date": "2025-06-15",
+      "photos": []
+    },
+    {
+      "name": "Światło z okna",
+      "category": "Sesje indywidualne",
+      "place": "Studio",
+      "date": "2025-01-15",
+      "photos": []
+    },
+    {
+      "name": "Ola i Bartek",
+      "category": "Śluby",
+      "place": "Gdańsk",
+      "date": "2025-08-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest Jasia",
+      "category": "Chrzty",
+      "place": "Poznań",
+      "date": "2025-06-15",
+      "photos": []
+    },
+    {
+      "name": "Czterdziestka Tomka",
+      "category": "Imprezy urodzinowe",
+      "place": "Kraków",
+      "date": "2025-05-15",
+      "photos": []
+    },
+    {
+      "name": "Piknik firmowy",
+      "category": "Reportaże z imprez",
+      "place": "Poznań",
+      "date": "2024-09-15",
+      "photos": []
+    },
+    {
+      "name": "Bieg górski",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Zakopane",
+      "date": "2025-08-15",
+      "photos": []
+    },
+    {
+      "name": "Portret biznesowy",
+      "category": "Sesje indywidualne",
+      "place": "Warszawa",
+      "date": "2025-09-15",
+      "photos": []
+    },
+    {
+      "name": "Karolina i Piotr",
+      "category": "Śluby",
+      "place": "Zakopane",
+      "date": "2024-10-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest Hani",
+      "category": "Chrzty",
+      "place": "Gdynia",
+      "date": "2025-08-15",
+      "photos": []
+    },
+    {
+      "name": "Urodziny Franka",
+      "category": "Imprezy urodzinowe",
+      "place": "Sopot",
+      "date": "2025-07-15",
+      "photos": []
+    },
+    {
+      "name": "Koncert w Browarze",
+      "category": "Reportaże z imprez",
+      "place": "Poznań",
+      "date": "2025-10-15",
+      "photos": []
+    },
+    {
+      "name": "Regaty",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Gdynia",
+      "date": "2025-07-15",
+      "photos": []
+    },
+    {
+      "name": "Tomek",
+      "category": "Sesje indywidualne",
+      "place": "Studio",
+      "date": "2025-03-15",
+      "photos": []
+    },
+    {
+      "name": "Ewa i Paweł",
+      "category": "Śluby",
+      "place": "Toskania",
+      "date": "2025-05-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest Stasia",
+      "category": "Chrzty",
+      "place": "Lublin",
+      "date": "2025-03-15",
+      "photos": []
+    },
+    {
+      "name": "Pięćdziesiątka Ani",
+      "category": "Imprezy urodzinowe",
+      "place": "Poznań",
+      "date": "2025-09-15",
+      "photos": []
+    },
+    {
+      "name": "Sylwester w Krakowie",
+      "category": "Reportaże z imprez",
+      "place": "Kraków",
+      "date": "2024-12-15",
+      "photos": []
+    },
+    {
+      "name": "Mecz ligowy",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Wrocław",
+      "date": "2025-10-15",
+      "photos": []
+    },
+    {
+      "name": "Ania w lesie",
+      "category": "Sesje indywidualne",
+      "place": "Puszcza Białowieska",
+      "date": "2024-11-15",
+      "photos": []
+    },
+    {
+      "name": "Marta i Jakub",
+      "category": "Śluby",
+      "place": "Wrocław",
+      "date": "2024-07-15",
+      "photos": []
+    },
+    {
+      "name": "Chrzest bliźniaków",
+      "category": "Chrzty",
+      "place": "Łódź",
+      "date": "2025-10-15",
+      "photos": []
+    },
+    {
+      "name": "Roczek Julki",
+      "category": "Imprezy urodzinowe",
+      "place": "Wrocław",
+      "date": "2025-11-15",
+      "photos": []
+    },
+    {
+      "name": "Jubileusz firmy",
+      "category": "Reportaże z imprez",
+      "place": "Gdańsk",
+      "date": "2025-05-15",
+      "photos": []
+    },
+    {
+      "name": "Zawody pływackie",
+      "category": "Reportaże z wydarzeń sportowych",
+      "place": "Poznań",
+      "date": "2025-03-15",
+      "photos": []
+    },
+    {
+      "name": "Julia nad morzem",
+      "category": "Sesje indywidualne",
+      "place": "Hel",
+      "date": "2025-08-15",
+      "photos": []
+    }
+  ]
+}

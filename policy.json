@@ -1,0 +1,36 @@
+{
+  "policy": {
+    "title": "Polityka prywatności i prawa autorskie",
+    "updated": "12 listopada 2026",
+    "sections": [
+      {
+        "heading": "1. Administrator danych",
+        "body": "Administratorem danych osobowych jest [IMIĘ I NAZWISKO LUB NAZWA FIRMY], prowadzący działalność pod nazwą Simonnee Photography, adres: [ADRES], NIP: [NIP].\n\nKontakt w sprawach danych osobowych: simonneephotography@gmail.com."
+      },
+      {
+        "heading": "2. Jakie dane zbieramy i po co",
+        "body": "Formularz kontaktowy: imię i nazwisko, adres e-mail, wybrana usługa, termin oraz treść wiadomości. Przetwarzamy je, aby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. b i f RODO).\n\nDane z formularza przechowujemy do czasu zakończenia rozmowy lub realizacji usługi, a następnie przez okres potrzebny do ewentualnych roszczeń i obowiązków podatkowych. Jeśli do współpracy nie dojdzie, usuwamy je w ciągu 12 miesięcy.\n\nNie prowadzimy kont użytkowników i nie wysyłamy newslettera."
+      },
+      {
+        "heading": "3. Komu przekazujemy dane",
+        "body": "Wiadomości z formularza są przekazywane przez usługę Web3Forms na adres e-mail administratora. Web3Forms działa jako podmiot przetwarzający i może przechowywać zgłoszenia przez ograniczony czas.\n\nStrona jest hostowana na GitHub Pages (GitHub, Inc.), a poczta obsługiwana przez Google (Gmail). Podmioty te mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym na podstawie standardowych klauzul umownych lub innych mechanizmów zgodnych z RODO.\n\nStrona korzysta z czcionki Jost ładowanej z serwerów Google Fonts, przez co adres IP odwiedzającego może zostać przekazany Google."
+      },
+      {
+        "heading": "4. Pliki cookies i statystyki",
+        "body": "Strona nie używa własnych plików cookies, nie stosuje narzędzi analitycznych ani reklamowych i nie śledzi odwiedzających."
+      },
+      {
+        "heading": "5. Twoje prawa",
+        "body": "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu wobec przetwarzania. Napisz na adres e-mail podany powyżej.\n\nMasz też prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (uodo.gov.pl). Podanie danych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na zapytanie."
+      },
+      {
+        "heading": "6. Prawa autorskie",
+        "body": "Wszystkie zdjęcia, teksty i grafiki na tej stronie są utworami chronionymi prawem autorskim (ustawa z 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych). © Simonnee Photography. Wszelkie prawa zastrzeżone.\n\nBez pisemnej zgody autora zabronione jest kopiowanie, publikowanie, modyfikowanie, sprzedawanie oraz wykorzystywanie zdjęć w celach komercyjnych, w tym do szkolenia systemów sztucznej inteligencji."
+      },
+      {
+        "heading": "7. Wizerunek osób na zdjęciach",
+        "body": "Zdjęcia z sesji publikujemy na stronie za zgodą osób fotografowanych. Jeśli chcesz, aby zdjęcie z Twoim wizerunkiem zostało usunięte, napisz na adres e-mail podany powyżej, a zrobimy to niezwłocznie."
+      }
+    ]
+  }
+}

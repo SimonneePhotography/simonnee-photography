@@ -1,0 +1,161 @@
+# Konfiguracja panelu /admin (Sveltia CMS, zgodna z formatem Decap CMS).
+# PRZED WDROŻENIEM: wpisz swoje repozytorium w polu "repo" (format: konto/nazwa-repozytorium).
+backend:
+  name: github
+  repo: SimonneePhotography/simonnee-photography
+  branch: main
+  # Logowanie przyciskiem "Zaloguj przez GitHub" wymaga małego serwisu OAuth (patrz README.md).
+  # Bez niego można zalogować się tokenem dostępu GitHub. Po uruchomieniu serwisu odkomentuj:
+  # base_url: https://TWOJ-SERWIS-OAUTH.workers.dev
+
+# Gdzie lądują wgrane zdjęcia i jak strona się do nich odwołuje
+media_folder: uploads
+public_folder: /uploads
+
+collections:
+  - name: settings
+    label: Ustawienia strony
+    files:
+      - name: settings
+        label: Logo, teksty i formularz
+        file: content/settings.json
+        fields:
+          - label: Ustawienia
+            name: settings
+            widget: object
+            fields:
+              - { label: Logo (obraz), name: logo, widget: image, required: false, hint: "Najlepiej PNG z przezroczystym tłem, poziome. Puste = wyświetla się nazwa tekstem." }
+              - { label: Nazwa (tekst w logo i na stronie powitalnej), name: site_name, widget: string }
+              - { label: Podpis pod nazwą na stronie powitalnej, name: site_sub, widget: string }
+              - { label: Tekst przycisku powitalnego, name: welcome_button, widget: string }
+              - { label: Opis pod nagłówkiem Usługi, name: lead_uslugi, widget: text }
+              - { label: Opis pod nagłówkiem Opinie, name: lead_opinie, widget: text }
+              - { label: Opis pod nagłówkiem Pytania, name: lead_faq, widget: text }
+              - { label: Nagłówek sekcji kontaktu, name: contact_heading, widget: string }
+              - { label: Adres e-mail (widoczny na stronie), name: email, widget: string }
+              - { label: Link do Instagrama, name: instagram, widget: string, required: false, hint: "Puste = ikona znika" }
+              - { label: Link do Facebooka, name: facebook, widget: string, required: false, hint: "Puste = ikona znika" }
+              - { label: Tekst przycisku formularza, name: submit_label, widget: string }
+              - { label: Komunikat po wysłaniu formularza, name: success_message, widget: string }
+              - { label: Klucz formularza (Web3Forms), name: form_key, widget: string, required: false, hint: "Klucz dostępu z maila od web3forms.com. Bez niego formularz nie wysyła wiadomości." }
+
+  - name: faq
+    label: Pytania (FAQ)
+    files:
+      - name: faq
+        label: Lista pytań
+        file: content/faq.json
+        fields:
+          - label: Pytania
+            label_singular: Pytanie
+            name: faq
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { label: Pytanie, name: q, widget: string }
+              - { label: Odpowiedź, name: a, widget: text }
+  - name: sessions
+    label: Sesje i zdjęcia
+    files:
+      - name: sessions
+        label: Wszystkie sesje
+        file: content/sessions.json
+        fields:
+          - label: Sesje
+            label_singular: Sesja
+            name: sessions
+            widget: list
+            add_to_top: true
+            summary: "{{fields.name}} ({{fields.category}})"
+            hint: "Nowa sesja pojawi się na stronie głównej. Kolejność można zmieniać przeciąganiem."
+            fields:
+              - { label: Nazwa sesji, name: name, widget: string, hint: "Wyświetla się po najechaniu na zdjęcie, np. Anna i Marek" }
+              - label: Kategoria
+                name: category
+                widget: relation
+                collection: services
+                file: services
+                search_fields: ["services.*.name"]
+                value_field: "services.*.name"
+                display_fields: ["services.*.name"]
+                hint: "Kategorie to nazwy usług. Dodasz nową kategorię, dodając usługę w zakładce Usługi."
+              - { label: Miejsce, name: place, widget: string, required: false, hint: "np. Mazury" }
+              - { label: Data sesji, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+              - { label: Zdjęcia, name: photos, widget: image, multiple: true, hint: "Pierwsze zdjęcie jest okładką sesji. Najlepiej poziome, ok. 2000 px szerokości." }
+
+  - name: services
+    label: Usługi
+    files:
+      - name: services
+        label: Lista usług
+        file: content/services.json
+        fields:
+          - label: Usługi
+            label_singular: Usługa
+            name: services
+            widget: list
+            summary: "{{fields.name}}: {{fields.price}}"
+            hint: "Nazwy usług pojawiają się też jako przyciski w formularzu kontaktowym."
+            fields:
+              - { label: Nazwa, name: name, widget: string }
+              - { label: Opis, name: description, widget: text }
+              - { label: Cena, name: price, widget: string, hint: "np. od 2 500 zł" }
+
+  - name: testimonials
+    label: Opinie
+    files:
+      - name: testimonials
+        label: Lista opinii
+        file: content/testimonials.json
+        fields:
+          - label: Opinie
+            label_singular: Opinia
+            name: testimonials
+            widget: list
+            add_to_top: true
+            summary: "{{fields.author}}"
+            fields:
+              - { label: Treść opinii, name: quote, widget: text }
+              - { label: Kto, name: author, widget: string, hint: "np. Anna i Marek" }
+              - { label: Dopisek, name: context, widget: string, required: false, hint: "np. ślub" }
+
+  - name: policy
+    label: Polityka prywatności
+    files:
+      - name: policy
+        label: Polityka prywatności i prawa autorskie
+        file: content/policy.json
+        fields:
+          - label: Polityka
+            name: policy
+            widget: object
+            fields:
+              - { label: Tytuł, name: title, widget: string }
+              - { label: Data ostatniej aktualizacji, name: updated, widget: string, hint: "np. 12 listopada 2026" }
+              - label: Sekcje
+                label_singular: Sekcja
+                name: sections
+                widget: list
+                summary: "{{fields.heading}}"
+                fields:
+                  - { label: Nagłówek, name: heading, widget: string }
+                  - { label: Treść, name: body, widget: text, hint: "Pusta linia oddziela akapity." }
+
+  - name: availability
+    label: Zajęte terminy
+    files:
+      - name: availability
+        label: Terminy niedostępne w kalendarzu
+        file: content/availability.json
+        fields:
+          - label: Zajęte terminy
+            label_singular: Termin
+            name: blocked
+            widget: list
+            add_to_top: true
+            summary: "{{fields.from}} {{fields.note}}"
+            hint: "Zajęte dni są wyszarzone i przekreślone w kalendarzu formularza. Przeszłe terminy można usuwać."
+            fields:
+              - { label: Od dnia, name: from, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { label: Do dnia (puste = tylko jeden dzień), name: to, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+              - { label: Notatka (niewidoczna na stronie), name: note, widget: string, required: false, hint: "np. ślub Ani i Marka" }

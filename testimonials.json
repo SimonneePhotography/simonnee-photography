@@ -1,0 +1,34 @@
+{
+  "testimonials": [
+    {
+      "quote": "Zapomnieliśmy, że ktoś robi zdjęcia, a każde ujęcie wygląda dokładnie tak, jak czuł się ten dzień.",
+      "author": "Anna i Marek",
+      "context": "ślub"
+    },
+    {
+      "quote": "Spokojna, zabawna i świetnie zorganizowana. Cała rodzina rozluźniła się po pięciu minutach.",
+      "author": "Julia K.",
+      "context": "chrzest"
+    },
+    {
+      "quote": "Całą galerię z gali dostaliśmy po czterech dniach, a każdy kadr nadawał się do użycia.",
+      "author": "Tomasz W.",
+      "context": "Atelier Nord, reportaż z imprezy"
+    },
+    {
+      "quote": "Plener w górach zaplanowany co do minuty, a mimo to czuliśmy się zupełnie swobodnie.",
+      "author": "Karolina i Piotr",
+      "context": "ślub"
+    },
+    {
+      "quote": "Pierwszy raz podobam się sobie na zdjęciach. Dziękuję za cierpliwość i dobre światło.",
+      "author": "Magda S.",
+      "context": "sesja indywidualna"
+    },
+    {
+      "quote": "Galeria przyszła szybciej, niż obiecano, a babcia już zamówiła odbitki dla całej rodziny.",
+      "author": "Ola i Bartek",
+      "context": "ślub"
+    }
+  ]
+}

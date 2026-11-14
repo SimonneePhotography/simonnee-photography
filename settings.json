@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "site_name": "Simonnee",
+    "site_sub": "Photography",
+    "logo": "",
+    "welcome_button": "Witaj w moim świecie",
+    "lead_uslugi": "Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.",
+    "lead_opinie": "Co mówią o mnie klienci.",
+    "lead_faq": "Najczęstsze pytania przed pierwszą rozmową.",
+    "contact_heading": "Stwórzmy coś, co przetrwa.",
+    "email": "simonneephotography@gmail.com",
+    "instagram": "https://www.instagram.com/simonnee_photography/",
+    "facebook": "https://www.facebook.com/SimonneePhotography/",
+    "submit_label": "Wyślij zapytanie",
+    "success_message": "Dziękuję, wiadomość wysłana. Odpowiem w ciągu jednego dnia roboczego.",
+    "form_key": "de5f782a-c06e-4197-9d45-72dc8dc19351"
+  }
+}

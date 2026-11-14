@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "name": "Śluby",
+      "description": "Od przygotowań po ostatni taniec. Reportaż, drugi fotograf i kilka spokojnych portretów. Galeria online i album artystyczny.",
+      "price": "od 7 900 zł"
+    },
+    {
+      "name": "Chrzty",
+      "description": "Uroczystość w kościele i przyjęcie w domu lub restauracji. Spokojny reportaż, portrety rodzinne i galeria online.",
+      "price": "od 1 800 zł"
+    },
+    {
+      "name": "Imprezy urodzinowe",
+      "description": "Urodziny dzieci i dorosłych, od domowych przyjęć po duże wieczory. Naturalne ujęcia gości i szybka galeria.",
+      "price": "od 1 500 zł"
+    },
+    {
+      "name": "Reportaże z imprez",
+      "description": "Gale, imprezy firmowe, koncerty i wieczory tematyczne. Reportaż z całego wydarzenia i szybka dostawa zdjęć.",
+      "price": "od 2 500 zł"
+    },
+    {
+      "name": "Reportaże z wydarzeń sportowych",
+      "description": "Biegi, turnieje i zawody. Dynamiczne ujęcia zawodników, kibiców i atmosfery, z szybką dostawą zdjęć dla organizatora.",
+      "price": "od 2 000 zł"
+    },
+    {
+      "name": "Sesje indywidualne",
+      "description": "Portret w studiu, w domu lub w plenerze. Swobodna sesja bez sztywnych póz i ponad 20 obrobionych zdjęć.",
+      "price": "od 900 zł"
+    }
+  ]
+}
