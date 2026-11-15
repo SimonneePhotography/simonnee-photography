@@ -19,6 +19,11 @@
       "name": "Chrzest",
       "description": "Uroczystość w kościele i przyjęcie w domu lub restauracji. Spokojny reportaż, portrety rodzinne i galeria online.",
       "price": "od 1 000 zł"
+    },
+    {
+      "name": "Reportaż z eventu",
+      "description": "Konferencje, gale i wydarzenia firmowe. Dynamiczne ujęcia prelegentów, uczestników i atmosfery, z szybką dostawą zdjęć dla organizatora.",
+      "price": "600 zł"
     }
   ]
 }
