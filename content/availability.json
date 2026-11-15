@@ -1,3 +1,39 @@
 {
-  "blocked": []
+  "blocked": [
+    {
+      "from": "2027-02-06",
+      "to": "",
+      "note": "18 Julii Falendasz"
+    },
+    {
+      "from": "2027-01-23",
+      "to": "",
+      "note": "Studniówka Jan Chruściński"
+    },
+    {
+      "from": "2027-01-09",
+      "to": "",
+      "note": "Studniówka Mateusz Lisowski"
+    },
+    {
+      "from": "2027-01-08",
+      "to": "",
+      "note": "Studniówka Jan Chruściński"
+    },
+    {
+      "from": "2026-12-22",
+      "to": "",
+      "note": "Licealne Party"
+    },
+    {
+      "from": "2026-12-12",
+      "to": "",
+      "note": "Licealne Party"
+    },
+    {
+      "from": "2026-11-20",
+      "to": "",
+      "note": "Licealne Party"
+    }
+  ]
 }
