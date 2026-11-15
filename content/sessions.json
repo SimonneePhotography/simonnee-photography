@@ -1,6 +1,15 @@
 {
   "sessions": [
     {
+      "name": "Koncert Profilaktyczny Im. Andrzeja Nagiela",
+      "category": "Reportaż z eventu",
+      "place": "Warszawa",
+      "date": "2026-11-07",
+      "photos": [
+        "/uploads/165_Profilaktyczny_Koncert_im._Andrzeja_Nagiela_07.11.2026.jpg"
+      ]
+    },
+    {
       "name": "Sesja Indywidualna - Igor i Mercedes, Kuba i BMW",
       "category": "Sesja indywidualna",
       "place": "Warszawa",
