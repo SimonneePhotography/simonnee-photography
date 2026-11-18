@@ -232,6 +232,49 @@ legend{padding:0;margin-bottom:12px;font-size:12px;letter-spacing:.16em;text-tra
 .credit{margin:28px 0 0;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
 .foot a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
 .foot a:hover{color:var(--ink)}
+.contacts{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.contacts .mail{margin-top:0}
+.contacts .mail:first-child{margin-top:clamp(24px,4vw,40px)}
+.mail.phone{color:var(--ink);font-size:clamp(20px,2.6vw,32px)}
+.mail.phone[hidden]{display:none}
+.w-logo{display:block;max-width:min(560px,78vw);max-height:34vh;width:auto;height:auto;margin:0 auto}
+.justified{display:flex;flex-wrap:wrap;gap:var(--gap)}
+.justified::after{content:"";flex-grow:999999}
+.justified>*{margin:0;min-width:0}
+.duo{display:flex;flex-direction:column;gap:var(--gap);container-type:inline-size}
+.duo-block{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,calc((1.45*(100cqw - var(--gap))/2 - var(--gap))/2));gap:var(--gap)}
+.duo-block .ra{grid-column:1;grid-row:1}
+.duo-block .rb{grid-column:1;grid-row:2}
+.duo-block .po{grid-column:2;grid-row:1/span 2}
+.duo .ls,.duo .po{margin:0;min-width:0;min-height:0}
+.duo .frame{aspect-ratio:auto}
+.duo-rest{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);align-items:center}
+.duo-rest .ls,.duo-rest .frame.ls{aspect-ratio:3/2}
+.duo-rest .po,.duo-rest .frame.po{aspect-ratio:2/3}
+.lb{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(8,8,7,.96);animation:lbin .25s ease both}
+.lb[hidden]{display:none}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lb-stage{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:56px clamp(12px,7vw,110px)}
+.lb-stage>*{animation:lbslide .35s cubic-bezier(.2,.7,.2,1) both}
+@keyframes lbslide{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.lb-stage img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.lb-stage .frame{flex:none}
+.lb-btn{position:absolute;z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(14,14,13,.6);color:var(--ink);font:300 24px/1 var(--font-body);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:border-color .2s,background .2s}
+.lb-btn:hover,.lb-btn:focus-visible{border-color:var(--ink);background:rgba(14,14,13,.9)}
+.lb-close{top:14px;right:14px;font-size:30px}
+.lb-prev{left:clamp(8px,2vw,28px);top:50%;transform:translateY(-50%)}
+.lb-next{right:clamp(8px,2vw,28px);top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:16px;left:0;right:0;margin:0;text-align:center;font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.lb[data-single="1"] .lb-prev,.lb[data-single="1"] .lb-next,.lb[data-single="1"] .lb-count{display:none}
+#s-grid .shot,#s-grid .frame{cursor:zoom-in}
+@media (max-width:520px){.lb-stage{padding:60px 8px}.lb-prev,.lb-next{top:auto;bottom:10px;transform:none}.lb-prev{left:16px}.lb-next{right:16px}.lb-btn{width:42px;height:42px}}
+.shot{position:relative;background:#1b1a18;overflow:hidden}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.about-photo.frame{aspect-ratio:4/5}
+.about-text p{margin:0 0 1.3em;color:var(--muted);font-weight:300;font-size:clamp(16px,1.3vw,18px);line-height:1.85;max-width:60ch}
+.about-text p:first-child{color:var(--ink);font-size:clamp(20px,2vw,26px);line-height:1.5;letter-spacing:-.01em}
+@media (max-width:760px){.about{grid-template-columns:1fr}.about-photo.frame{max-width:420px}}
 footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
@@ -283,6 +326,7 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
       <ul>
         <li><a href="#prace" data-page="prace">Prace</a></li>
         <li><a href="#uslugi" data-page="uslugi">Usługi</a></li>
+        <li><a href="#o-mnie" data-page="o-mnie">O mnie</a></li>
         <li><a href="#opinie" data-page="opinie">Opinie</a></li>
         <li><a href="#faq" data-page="faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
@@ -319,6 +363,20 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
         <p class="page-lead" id="lead-uslugi">Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.</p>
       </div>
       <div id="svc-list"></div>
+    </div>
+  </div>
+
+  <!-- STRONA: O MNIE -->
+  <div class="page" id="o-mnie" data-title="O mnie" hidden>
+    <div class="wrap">
+      <div class="page-head">
+        <h1 class="page-title" id="about-title">O mnie</h1>
+        <p class="page-lead" id="about-lead"></p>
+      </div>
+      <div class="about">
+        <figure class="frame about-photo g3" id="about-photo"></figure>
+        <div class="about-text" id="about-text"></div>
+      </div>
     </div>
   </div>
 
@@ -363,7 +421,7 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
         <p class="meta" id="s-meta"></p>
         <h1 class="page-title" id="s-title"></h1>
       </div>
-      <div class="gallery" id="s-grid"></div>
+      <div class="justified" id="s-grid"></div>
       <nav class="pn" aria-label="Inne sesje z tej kategorii">
         <a id="s-prev" href="#prace"></a>
         <a id="s-next" href="#prace"></a>
@@ -375,7 +433,7 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
   <section id="kontakt" class="cta" aria-labelledby="h-cta">
     <div class="wrap">
       <h2 id="h-cta">Stwórzmy coś, co przetrwa.</h2>
-      <a class="mail" id="mail" href="mailto:simonneephotography@gmail.com">simonneephotography@gmail.com</a>
+      <div class="contacts"><a class="mail" id="mail" href="mailto:simonneephotography@gmail.com">simonneephotography@gmail.com</a><a class="mail phone" id="phone" href="#" hidden></a></div>
       <form id="enquiry" novalidate>
         <div class="field"><label for="f-name">Imię i nazwisko</label><input id="f-name" type="text" autocomplete="name" placeholder="Jak mam się do Ciebie zwracać?"></div>
         <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email" placeholder="ty@email.pl"></div>
@@ -416,6 +474,14 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
   </div>
   <p class="credit">Created by Unruled Pixels</p>
 </footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie" hidden>
+  <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Zamknij">×</button>
+  <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Poprzednie zdjęcie">←</button>
+  <div class="lb-stage" id="lb-stage"></div>
+  <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Następne zdjęcie">→</button>
+  <p class="lb-count" id="lb-count" aria-live="polite"></p>
+</div>
 </div>
 
 <script>
@@ -441,7 +507,7 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
   });
 
   /* Dane z content/*.json (edytowane w panelu /admin). Gdy się nie wczytają, np. po otwarciu pliku z dysku, strona używa danych przykładowych. */
-  var FALLBACK={"sessions":[{"name":"Anna i Marek","category":"Śluby","place":"Mazury","date":"2025-09-15","photos":[]},{"name":"Chrzest Antosia","category":"Chrzty","place":"Warszawa","date":"2025-04-15","photos":[]},{"name":"Urodziny Zosi","category":"Imprezy urodzinowe","place":"Warszawa","date":"2025-03-15","photos":[]},{"name":"Gala Atelier Nord","category":"Reportaże z imprez","place":"Warszawa","date":"2024-11-15","photos":[]},{"name":"Maraton Warszawski","category":"Reportaże z wydarzeń sportowych","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Magda S.","category":"Sesje indywidualne","place":"Studio","date":"2025-02-15","photos":[]},{"name":"Kasia i Tomek","category":"Śluby","place":"Kraków","date":"2025-06-15","photos":[]},{"name":"Chrzest Leny","category":"Chrzty","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Osiemnastka Mai","category":"Imprezy urodzinowe","place":"Łódź","date":"2025-04-15","photos":[]},{"name":"Wieczór panieński","category":"Reportaże z imprez","place":"Sopot","date":"2025-06-15","photos":[]},{"name":"Turniej piłkarski","category":"Reportaże z wydarzeń sportowych","place":"Łódź","date":"2025-06-15","photos":[]},{"name":"Światło z okna","category":"Sesje indywidualne","place":"Studio","date":"2025-01-15","photos":[]},{"name":"Ola i Bartek","category":"Śluby","place":"Gdańsk","date":"2025-08-15","photos":[]},{"name":"Chrzest Jasia","category":"Chrzty","place":"Poznań","date":"2025-06-15","photos":[]},{"name":"Czterdziestka Tomka","category":"Imprezy urodzinowe","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Piknik firmowy","category":"Reportaże z imprez","place":"Poznań","date":"2024-09-15","photos":[]},{"name":"Bieg górski","category":"Reportaże z wydarzeń sportowych","place":"Zakopane","date":"2025-08-15","photos":[]},{"name":"Portret biznesowy","category":"Sesje indywidualne","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Karolina i Piotr","category":"Śluby","place":"Zakopane","date":"2024-10-15","photos":[]},{"name":"Chrzest Hani","category":"Chrzty","place":"Gdynia","date":"2025-08-15","photos":[]},{"name":"Urodziny Franka","category":"Imprezy urodzinowe","place":"Sopot","date":"2025-07-15","photos":[]},{"name":"Koncert w Browarze","category":"Reportaże z imprez","place":"Poznań","date":"2025-10-15","photos":[]},{"name":"Regaty","category":"Reportaże z wydarzeń sportowych","place":"Gdynia","date":"2025-07-15","photos":[]},{"name":"Tomek","category":"Sesje indywidualne","place":"Studio","date":"2025-03-15","photos":[]},{"name":"Ewa i Paweł","category":"Śluby","place":"Toskania","date":"2025-05-15","photos":[]},{"name":"Chrzest Stasia","category":"Chrzty","place":"Lublin","date":"2025-03-15","photos":[]},{"name":"Pięćdziesiątka Ani","category":"Imprezy urodzinowe","place":"Poznań","date":"2025-09-15","photos":[]},{"name":"Sylwester w Krakowie","category":"Reportaże z imprez","place":"Kraków","date":"2024-12-15","photos":[]},{"name":"Mecz ligowy","category":"Reportaże z wydarzeń sportowych","place":"Wrocław","date":"2025-10-15","photos":[]},{"name":"Ania w lesie","category":"Sesje indywidualne","place":"Puszcza Białowieska","date":"2024-11-15","photos":[]},{"name":"Marta i Jakub","category":"Śluby","place":"Wrocław","date":"2024-07-15","photos":[]},{"name":"Chrzest bliźniaków","category":"Chrzty","place":"Łódź","date":"2025-10-15","photos":[]},{"name":"Roczek Julki","category":"Imprezy urodzinowe","place":"Wrocław","date":"2025-11-15","photos":[]},{"name":"Jubileusz firmy","category":"Reportaże z imprez","place":"Gdańsk","date":"2025-05-15","photos":[]},{"name":"Zawody pływackie","category":"Reportaże z wydarzeń sportowych","place":"Poznań","date":"2025-03-15","photos":[]},{"name":"Julia nad morzem","category":"Sesje indywidualne","place":"Hel","date":"2025-08-15","photos":[]}],"services":[{"name":"Śluby","description":"Od przygotowań po ostatni taniec. Reportaż, drugi fotograf i kilka spokojnych portretów. Galeria online i album artystyczny.","price":"od 7 900 zł"},{"name":"Chrzty","description":"Uroczystość w kościele i przyjęcie w domu lub restauracji. Spokojny reportaż, portrety rodzinne i galeria online.","price":"od 1 800 zł"},{"name":"Imprezy urodzinowe","description":"Urodziny dzieci i dorosłych, od domowych przyjęć po duże wieczory. Naturalne ujęcia gości i szybka galeria.","price":"od 1 500 zł"},{"name":"Reportaże z imprez","description":"Gale, imprezy firmowe, koncerty i wieczory tematyczne. Reportaż z całego wydarzenia i szybka dostawa zdjęć.","price":"od 2 500 zł"},{"name":"Reportaże z wydarzeń sportowych","description":"Biegi, turnieje i zawody. Dynamiczne ujęcia zawodników, kibiców i atmosfery, z szybką dostawą zdjęć dla organizatora.","price":"od 2 000 zł"},{"name":"Sesje indywidualne","description":"Portret w studiu, w domu lub w plenerze. Swobodna sesja bez sztywnych póz i ponad 20 obrobionych zdjęć.","price":"od 900 zł"}],"testimonials":[{"quote":"Zapomnieliśmy, że ktoś robi zdjęcia, a każde ujęcie wygląda dokładnie tak, jak czuł się ten dzień.","author":"Anna i Marek","context":"ślub"},{"quote":"Spokojna, zabawna i świetnie zorganizowana. Cała rodzina rozluźniła się po pięciu minutach.","author":"Julia K.","context":"chrzest"},{"quote":"Całą galerię z gali dostaliśmy po czterech dniach, a każdy kadr nadawał się do użycia.","author":"Tomasz W.","context":"Atelier Nord, reportaż z imprezy"},{"quote":"Plener w górach zaplanowany co do minuty, a mimo to czuliśmy się zupełnie swobodnie.","author":"Karolina i Piotr","context":"ślub"},{"quote":"Pierwszy raz podobam się sobie na zdjęciach. Dziękuję za cierpliwość i dobre światło.","author":"Magda S.","context":"sesja indywidualna"},{"quote":"Galeria przyszła szybciej, niż obiecano, a babcia już zamówiła odbitki dla całej rodziny.","author":"Ola i Bartek","context":"ślub"}],"faq":[{"q":"Z jakim wyprzedzeniem warto rezerwować?","a":"Śluby zwykle 9–12 miesięcy wcześniej, zwłaszcza letnie piątki i soboty. Sesje portretowe i dla marek często udaje się umówić w 2–3 tygodnie."},{"q":"Jak wyglądają zaliczka i płatność?","a":"Termin rezerwuje zaliczka 30% i podpisana umowa. Resztę wpłacacie dwa tygodnie przed sesją. Przy ślubach możliwe są raty."},{"q":"Kiedy dostanę zdjęcia?","a":"Zapowiedź 15–20 zdjęć w 72 godziny. Galerie portretowe po dwóch tygodniach, ślubne po sześciu do ośmiu."},{"q":"Czy dojeżdżasz?","a":"Tak, pracuję w całej Europie i dalej. Koszty podróży wyceniam jawnie, a sesje w promieniu godziny od studia nie mają dopłaty."},{"q":"Czy mogę drukować i udostępniać zdjęcia?","a":"Dostajecie osobistą licencję na odbitki, albumy i media społecznościowe. Użycie komercyjne obejmują pakiety editorial i dla marek."},{"q":"Co, jeśli będzie padać?","a":"Deszcz robi piękne zdjęcia. Przy sesjach plenerowych możemy raz bezpłatnie zmienić termin, jeśli prognoza jest zła."}],"settings":{"site_name":"Simonnee","site_sub":"Photography","logo":"","welcome_button":"Witaj w moim świecie","lead_uslugi":"Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.","lead_opinie":"Co mówią o mnie klienci.","lead_faq":"Najczęstsze pytania przed pierwszą rozmową.","contact_heading":"Stwórzmy coś, co przetrwa.","email":"simonneephotography@gmail.com","instagram":"https://www.instagram.com/simonnee_photography/","facebook":"https://www.facebook.com/SimonneePhotography/","submit_label":"Wyślij zapytanie","success_message":"Dziękuję, wiadomość wysłana. Odpowiem w ciągu jednego dnia roboczego.","form_key":"de5f782a-c06e-4197-9d45-72dc8dc19351"},"policy":{"title":"Polityka prywatności i prawa autorskie","updated":"12 listopada 2026","sections":[{"heading":"1. Administrator danych","body":"Administratorem danych osobowych jest [IMIĘ I NAZWISKO LUB NAZWA FIRMY], prowadzący działalność pod nazwą Simonnee Photography, adres: [ADRES], NIP: [NIP].\n\nKontakt w sprawach danych osobowych: simonneephotography@gmail.com."},{"heading":"2. Jakie dane zbieramy i po co","body":"Formularz kontaktowy: imię i nazwisko, adres e-mail, wybrana usługa, termin oraz treść wiadomości. Przetwarzamy je, aby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. b i f RODO).\n\nDane z formularza przechowujemy do czasu zakończenia rozmowy lub realizacji usługi, a następnie przez okres potrzebny do ewentualnych roszczeń i obowiązków podatkowych. Jeśli do współpracy nie dojdzie, usuwamy je w ciągu 12 miesięcy.\n\nNie prowadzimy kont użytkowników i nie wysyłamy newslettera."},{"heading":"3. Komu przekazujemy dane","body":"Wiadomości z formularza są przekazywane przez usługę Web3Forms na adres e-mail administratora. Web3Forms działa jako podmiot przetwarzający i może przechowywać zgłoszenia przez ograniczony czas.\n\nStrona jest hostowana na GitHub Pages (GitHub, Inc.), a poczta obsługiwana przez Google (Gmail). Podmioty te mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym na podstawie standardowych klauzul umownych lub innych mechanizmów zgodnych z RODO.\n\nStrona korzysta z czcionki Jost ładowanej z serwerów Google Fonts, przez co adres IP odwiedzającego może zostać przekazany Google."},{"heading":"4. Pliki cookies i statystyki","body":"Strona nie używa własnych plików cookies, nie stosuje narzędzi analitycznych ani reklamowych i nie śledzi odwiedzających."},{"heading":"5. Twoje prawa","body":"Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu wobec przetwarzania. Napisz na adres e-mail podany powyżej.\n\nMasz też prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (uodo.gov.pl). Podanie danych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na zapytanie."},{"heading":"6. Prawa autorskie","body":"Wszystkie zdjęcia, teksty i grafiki na tej stronie są utworami chronionymi prawem autorskim (ustawa z 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych). © Simonnee Photography. Wszelkie prawa zastrzeżone.\n\nBez pisemnej zgody autora zabronione jest kopiowanie, publikowanie, modyfikowanie, sprzedawanie oraz wykorzystywanie zdjęć w celach komercyjnych, w tym do szkolenia systemów sztucznej inteligencji."},{"heading":"7. Wizerunek osób na zdjęciach","body":"Zdjęcia z sesji publikujemy na stronie za zgodą osób fotografowanych. Jeśli chcesz, aby zdjęcie z Twoim wizerunkiem zostało usunięte, napisz na adres e-mail podany powyżej, a zrobimy to niezwłocznie."}]},"blocked":[]};
+  var FALLBACK={"sessions":[{"name":"Anna i Marek","category":"Śluby","place":"Mazury","date":"2025-09-15","photos":[]},{"name":"Chrzest Antosia","category":"Chrzty","place":"Warszawa","date":"2025-04-15","photos":[]},{"name":"Urodziny Zosi","category":"Imprezy urodzinowe","place":"Warszawa","date":"2025-03-15","photos":[]},{"name":"Gala Atelier Nord","category":"Reportaże z imprez","place":"Warszawa","date":"2024-11-15","photos":[]},{"name":"Maraton Warszawski","category":"Reportaże z wydarzeń sportowych","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Magda S.","category":"Sesje indywidualne","place":"Studio","date":"2025-02-15","photos":[]},{"name":"Kasia i Tomek","category":"Śluby","place":"Kraków","date":"2025-06-15","photos":[]},{"name":"Chrzest Leny","category":"Chrzty","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Osiemnastka Mai","category":"Imprezy urodzinowe","place":"Łódź","date":"2025-04-15","photos":[]},{"name":"Wieczór panieński","category":"Reportaże z imprez","place":"Sopot","date":"2025-06-15","photos":[]},{"name":"Turniej piłkarski","category":"Reportaże z wydarzeń sportowych","place":"Łódź","date":"2025-06-15","photos":[]},{"name":"Światło z okna","category":"Sesje indywidualne","place":"Studio","date":"2025-01-15","photos":[]},{"name":"Ola i Bartek","category":"Śluby","place":"Gdańsk","date":"2025-08-15","photos":[]},{"name":"Chrzest Jasia","category":"Chrzty","place":"Poznań","date":"2025-06-15","photos":[]},{"name":"Czterdziestka Tomka","category":"Imprezy urodzinowe","place":"Kraków","date":"2025-05-15","photos":[]},{"name":"Piknik firmowy","category":"Reportaże z imprez","place":"Poznań","date":"2024-09-15","photos":[]},{"name":"Bieg górski","category":"Reportaże z wydarzeń sportowych","place":"Zakopane","date":"2025-08-15","photos":[]},{"name":"Portret biznesowy","category":"Sesje indywidualne","place":"Warszawa","date":"2025-09-15","photos":[]},{"name":"Karolina i Piotr","category":"Śluby","place":"Zakopane","date":"2024-10-15","photos":[]},{"name":"Chrzest Hani","category":"Chrzty","place":"Gdynia","date":"2025-08-15","photos":[]},{"name":"Urodziny Franka","category":"Imprezy urodzinowe","place":"Sopot","date":"2025-07-15","photos":[]},{"name":"Koncert w Browarze","category":"Reportaże z imprez","place":"Poznań","date":"2025-10-15","photos":[]},{"name":"Regaty","category":"Reportaże z wydarzeń sportowych","place":"Gdynia","date":"2025-07-15","photos":[]},{"name":"Tomek","category":"Sesje indywidualne","place":"Studio","date":"2025-03-15","photos":[]},{"name":"Ewa i Paweł","category":"Śluby","place":"Toskania","date":"2025-05-15","photos":[]},{"name":"Chrzest Stasia","category":"Chrzty","place":"Lublin","date":"2025-03-15","photos":[]},{"name":"Pięćdziesiątka Ani","category":"Imprezy urodzinowe","place":"Poznań","date":"2025-09-15","photos":[]},{"name":"Sylwester w Krakowie","category":"Reportaże z imprez","place":"Kraków","date":"2024-12-15","photos":[]},{"name":"Mecz ligowy","category":"Reportaże z wydarzeń sportowych","place":"Wrocław","date":"2025-10-15","photos":[]},{"name":"Ania w lesie","category":"Sesje indywidualne","place":"Puszcza Białowieska","date":"2024-11-15","photos":[]},{"name":"Marta i Jakub","category":"Śluby","place":"Wrocław","date":"2024-07-15","photos":[]},{"name":"Chrzest bliźniaków","category":"Chrzty","place":"Łódź","date":"2025-10-15","photos":[]},{"name":"Roczek Julki","category":"Imprezy urodzinowe","place":"Wrocław","date":"2025-11-15","photos":[]},{"name":"Jubileusz firmy","category":"Reportaże z imprez","place":"Gdańsk","date":"2025-05-15","photos":[]},{"name":"Zawody pływackie","category":"Reportaże z wydarzeń sportowych","place":"Poznań","date":"2025-03-15","photos":[]},{"name":"Julia nad morzem","category":"Sesje indywidualne","place":"Hel","date":"2025-08-15","photos":[]}],"services":[{"name":"Śluby","description":"Od przygotowań po ostatni taniec. Reportaż, drugi fotograf i kilka spokojnych portretów. Galeria online i album artystyczny.","price":"od 7 900 zł"},{"name":"Chrzty","description":"Uroczystość w kościele i przyjęcie w domu lub restauracji. Spokojny reportaż, portrety rodzinne i galeria online.","price":"od 1 800 zł"},{"name":"Imprezy urodzinowe","description":"Urodziny dzieci i dorosłych, od domowych przyjęć po duże wieczory. Naturalne ujęcia gości i szybka galeria.","price":"od 1 500 zł"},{"name":"Reportaże z imprez","description":"Gale, imprezy firmowe, koncerty i wieczory tematyczne. Reportaż z całego wydarzenia i szybka dostawa zdjęć.","price":"od 2 500 zł"},{"name":"Reportaże z wydarzeń sportowych","description":"Biegi, turnieje i zawody. Dynamiczne ujęcia zawodników, kibiców i atmosfery, z szybką dostawą zdjęć dla organizatora.","price":"od 2 000 zł"},{"name":"Sesje indywidualne","description":"Portret w studiu, w domu lub w plenerze. Swobodna sesja bez sztywnych póz i ponad 20 obrobionych zdjęć.","price":"od 900 zł"}],"testimonials":[{"quote":"Zapomnieliśmy, że ktoś robi zdjęcia, a każde ujęcie wygląda dokładnie tak, jak czuł się ten dzień.","author":"Anna i Marek","context":"ślub"},{"quote":"Spokojna, zabawna i świetnie zorganizowana. Cała rodzina rozluźniła się po pięciu minutach.","author":"Julia K.","context":"chrzest"},{"quote":"Całą galerię z gali dostaliśmy po czterech dniach, a każdy kadr nadawał się do użycia.","author":"Tomasz W.","context":"Atelier Nord, reportaż z imprezy"},{"quote":"Plener w górach zaplanowany co do minuty, a mimo to czuliśmy się zupełnie swobodnie.","author":"Karolina i Piotr","context":"ślub"},{"quote":"Pierwszy raz podobam się sobie na zdjęciach. Dziękuję za cierpliwość i dobre światło.","author":"Magda S.","context":"sesja indywidualna"},{"quote":"Galeria przyszła szybciej, niż obiecano, a babcia już zamówiła odbitki dla całej rodziny.","author":"Ola i Bartek","context":"ślub"}],"faq":[{"q":"Z jakim wyprzedzeniem warto rezerwować?","a":"Śluby zwykle 9–12 miesięcy wcześniej, zwłaszcza letnie piątki i soboty. Sesje portretowe i dla marek często udaje się umówić w 2–3 tygodnie."},{"q":"Jak wyglądają zaliczka i płatność?","a":"Termin rezerwuje zaliczka 30% i podpisana umowa. Resztę wpłacacie dwa tygodnie przed sesją. Przy ślubach możliwe są raty."},{"q":"Kiedy dostanę zdjęcia?","a":"Zapowiedź 15–20 zdjęć w 72 godziny. Galerie portretowe po dwóch tygodniach, ślubne po sześciu do ośmiu."},{"q":"Czy dojeżdżasz?","a":"Tak, pracuję w całej Europie i dalej. Koszty podróży wyceniam jawnie, a sesje w promieniu godziny od studia nie mają dopłaty."},{"q":"Czy mogę drukować i udostępniać zdjęcia?","a":"Dostajecie osobistą licencję na odbitki, albumy i media społecznościowe. Użycie komercyjne obejmują pakiety editorial i dla marek."},{"q":"Co, jeśli będzie padać?","a":"Deszcz robi piękne zdjęcia. Przy sesjach plenerowych możemy raz bezpłatnie zmienić termin, jeśli prognoza jest zła."}],"settings":{"site_name":"Simonnee","site_sub":"Photography","logo":"","welcome_button":"Witaj w moim świecie","lead_uslugi":"Każda sesja powstaje na Waszą miarę. Podane ceny są punktem wyjścia do rozmowy.","lead_opinie":"Co mówią o mnie klienci.","lead_faq":"Najczęstsze pytania przed pierwszą rozmową.","contact_heading":"Stwórzmy coś, co przetrwa.","email":"simonneephotography@gmail.com","instagram":"https://www.instagram.com/simonnee_photography/","facebook":"https://www.facebook.com/SimonneePhotography/","submit_label":"Wyślij zapytanie","success_message":"Dziękuję, wiadomość wysłana. Odpowiem w ciągu jednego dnia roboczego.","form_key":"de5f782a-c06e-4197-9d45-72dc8dc19351","welcome_logo":"","phone":""},"policy":{"title":"Polityka prywatności i prawa autorskie","updated":"12 listopada 2026","sections":[{"heading":"1. Administrator danych","body":"Administratorem danych osobowych jest [IMIĘ I NAZWISKO LUB NAZWA FIRMY], prowadzący działalność pod nazwą Simonnee Photography, adres: [ADRES], NIP: [NIP].\n\nKontakt w sprawach danych osobowych: simonneephotography@gmail.com."},{"heading":"2. Jakie dane zbieramy i po co","body":"Formularz kontaktowy: imię i nazwisko, adres e-mail, wybrana usługa, termin oraz treść wiadomości. Przetwarzamy je, aby odpowiedzieć na zapytanie i przygotować ofertę (art. 6 ust. 1 lit. b i f RODO).\n\nDane z formularza przechowujemy do czasu zakończenia rozmowy lub realizacji usługi, a następnie przez okres potrzebny do ewentualnych roszczeń i obowiązków podatkowych. Jeśli do współpracy nie dojdzie, usuwamy je w ciągu 12 miesięcy.\n\nNie prowadzimy kont użytkowników i nie wysyłamy newslettera."},{"heading":"3. Komu przekazujemy dane","body":"Wiadomości z formularza są przekazywane przez usługę Web3Forms na adres e-mail administratora. Web3Forms działa jako podmiot przetwarzający i może przechowywać zgłoszenia przez ograniczony czas.\n\nStrona jest hostowana na GitHub Pages (GitHub, Inc.), a poczta obsługiwana przez Google (Gmail). Podmioty te mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym na podstawie standardowych klauzul umownych lub innych mechanizmów zgodnych z RODO.\n\nStrona korzysta z czcionki Jost ładowanej z serwerów Google Fonts, przez co adres IP odwiedzającego może zostać przekazany Google."},{"heading":"4. Pliki cookies i statystyki","body":"Strona nie używa własnych plików cookies, nie stosuje narzędzi analitycznych ani reklamowych i nie śledzi odwiedzających."},{"heading":"5. Twoje prawa","body":"Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu wobec przetwarzania. Napisz na adres e-mail podany powyżej.\n\nMasz też prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (uodo.gov.pl). Podanie danych w formularzu jest dobrowolne, ale niezbędne do odpowiedzi na zapytanie."},{"heading":"6. Prawa autorskie","body":"Wszystkie zdjęcia, teksty i grafiki na tej stronie są utworami chronionymi prawem autorskim (ustawa z 4 lutego 1994 r. o prawie autorskim i prawach pokrewnych). © Simonnee Photography. Wszelkie prawa zastrzeżone.\n\nBez pisemnej zgody autora zabronione jest kopiowanie, publikowanie, modyfikowanie, sprzedawanie oraz wykorzystywanie zdjęć w celach komercyjnych, w tym do szkolenia systemów sztucznej inteligencji."},{"heading":"7. Wizerunek osób na zdjęciach","body":"Zdjęcia z sesji publikujemy na stronie za zgodą osób fotografowanych. Jeśli chcesz, aby zdjęcie z Twoim wizerunkiem zostało usunięte, napisz na adres e-mail podany powyżej, a zrobimy to niezwłocznie."}]},"blocked":[],"about":{"title":"O mnie","lead":"Kilka słów o tym, kto stoi za aparatem.","photo":"","text":"Cześć, jestem Simonnee. Fotografuję od lat, a najbardziej lubię chwile, których nikt nie planuje: spojrzenie, śmiech, dłoń na ramieniu.\n\nPracuję spokojnie i bez sztywnych póz. Wolę, żebyście zapomnieli o aparacie, a zdjęcia wyglądały tak, jak czuł się ten dzień.\n\nMieszkam w Warszawie, ale jeżdżę po całej Polsce. Napisz, co planujesz, a wspólnie ustalimy, jak to uchwycić."}};
   var CATEGORY_ORDER=['Śluby','Chrzty','Imprezy urodzinowe','Reportaże z imprez','Reportaże z wydarzeń sportowych','Sesje indywidualne'];
   var MONTHS=['styczeń','luty','marzec','kwiecień','maj','czerwiec','lipiec','sierpień','wrzesień','październik','listopad','grudzień'];
 
@@ -472,6 +538,10 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
     t('h-cta',c.contact_heading); t('f-submit',c.submit_label);
     var logo=document.querySelector('.logo');
     if(c.favicon){ document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function(l){ l.href=c.favicon; l.removeAttribute('type'); }); }
+    var wn=document.querySelector('.w-name');
+    if(c.welcome_logo){ var wl=document.createElement('img'); wl.className='w-logo'; wl.src=c.welcome_logo; wl.alt=c.site_name+' '+c.site_sub; wn.textContent=''; wn.appendChild(wl); }
+    var ph=document.getElementById('phone');
+    if(c.phone){ ph.textContent=c.phone; ph.href='tel:'+String(c.phone).replace(/[^\d+]/g,''); ph.hidden=false; } else { ph.hidden=true; }
     if(c.logo){ var im=document.createElement('img'); im.src=c.logo; im.alt=c.site_name+' '+c.site_sub; logo.textContent=''; logo.appendChild(im); }
     else { logo.textContent=c.site_name; logo.setAttribute('aria-label',c.site_name+' '+c.site_sub+', strona główna'); }
     if(c.email){ var m=document.getElementById('mail'); m.textContent=c.email; m.href='mailto:'+c.email; }
@@ -487,8 +557,22 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
         return {'@type':'Offer',itemOffered:{'@type':'Service',name:x.name,description:x.description||'',areaServed:'Polska'}};
       })};
       d.email=CFG.email||d.email;
+      if(CFG.phone) d.telephone=CFG.phone;
       n.textContent=JSON.stringify(d);
     }catch(e){}
+  }
+  function renderAbout(a){
+    if(!a) return;
+    if(a.title) document.getElementById('about-title').textContent=a.title;
+    var lead=document.getElementById('about-lead'); lead.textContent=a.lead||''; lead.hidden=!a.lead;
+    var ph=document.getElementById('about-photo'); ph.textContent='';
+    if(a.photo){
+      ph.className='frame has-img about-photo';
+      var im=document.createElement('img'); im.src=a.photo; im.alt=(a.title||'O mnie')+': '+(CFG.site_name||'')+' '+(CFG.site_sub||''); im.loading='lazy'; ph.appendChild(im);
+    } else { ph.className='frame about-photo g3'; ph.setAttribute('role','img'); ph.setAttribute('aria-label','Miejsce na zdjęcie'); }
+    var box=document.getElementById('about-text'); box.textContent='';
+    String(a.text||'').split(/\n\s*\n/).forEach(function(p){ if(p.trim()) box.appendChild(el('p',null,p.trim())); });
+    var link=document.querySelector('a[data-page="o-mnie"]'); if(link) link.parentNode.hidden=!(a.text||a.photo);
   }
   function renderFaq(list){
     var box=document.getElementById('faq-list'); box.textContent='';
@@ -542,8 +626,9 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
       seen[id]=true;
       var s={id:id,name:r.name,cat:r.category||'Inne',
              info:[r.place,niceDate(r.date)].filter(Boolean).join(', '),
-             photos:photoList(r.photos),
+             land:photoList(r.photos), photos:[],
              g:(idx*5)%12+1, x:30+((idx*37)%45), y:22+((idx*29)%55)};
+      s.nland=s.land.length; s.photos=s.land.concat(photoList(r.photos_portrait));
       sessions.push(s); byId[id]=s;
       if(!byCat[s.cat]){ byCat[s.cat]=[]; order.push(s.cat); }
       s.i=byCat[s.cat].length; byCat[s.cat].push(s);
@@ -615,35 +700,160 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
     a.appendChild(el('small',null,label));
     a.appendChild(el('span',null,s.name));
   }
+  var curSession=null, curCols=0, renderTok=0;
+  function colCount(){ return window.innerWidth>520?3:1; }
+  function rowH(c){ return c===3?260:(c===2?210:430); }
+  function place(box,it,r,H){
+    it.style.flexGrow=String(Math.round(r*100));
+    it.style.flexBasis=Math.round(r*H)+'px';
+    it.style.aspectRatio=String(r);
+    box.appendChild(it);
+  }
+  function probe(src){
+    return new Promise(function(res){
+      var im=new Image(), done=false;
+      function fin(r){ if(!done){ done=true; res(r); } }
+      im.onload=function(){ fin(im.naturalWidth&&im.naturalHeight?im.naturalWidth/im.naturalHeight:1.5); };
+      im.onerror=function(){ fin(1.5); };
+      im.src=src;
+      setTimeout(function(){ fin(1.5); },8000);
+    });
+  }
+  var curSlides=[];
+  function layout(items,cols){
+    sGrid.textContent='';
+    if(cols!==3){
+      sGrid.className='justified';
+      var H=rowH(cols);
+      items.forEach(function(x){ place(sGrid,x.el,x.r,H); });
+      return;
+    }
+    sGrid.className='duo';
+    var L=items.filter(function(x){ return x.o==='L'; }), P=items.filter(function(x){ return x.o==='P'; });
+    L.forEach(function(x){ x.el.classList.add('ls'); });
+    P.forEach(function(x){ x.el.classList.add('po'); });
+    var blocks=Math.min(Math.floor(L.length/2),P.length), b;
+    for(b=0;b<blocks;b++){
+      var bl=el('div','duo-block');
+      L[2*b].el.classList.add('ra'); bl.appendChild(L[2*b].el);
+      L[2*b+1].el.classList.add('rb'); bl.appendChild(L[2*b+1].el);
+      bl.appendChild(P[b].el);
+      sGrid.appendChild(bl);
+    }
+    var rest=L.slice(blocks*2).concat(P.slice(blocks));
+    for(var k=0;k<rest.length;k+=2){
+      var row=el('div','duo-rest');
+      row.appendChild(rest[k].el);
+      if(rest[k+1]) row.appendChild(rest[k+1].el);
+      sGrid.appendChild(row);
+    }
+  }
   function renderSession(s){
-    var n=s.photos.length;
+    curSession=s; curCols=colCount();
+    var n=s.photos.length, tok=++renderTok;
     sTitle.textContent=s.name;
     sMeta.textContent=[s.cat,s.info,n?plural(n):''].filter(Boolean).join(' · ');
-    sGrid.textContent='';
+    sGrid.textContent=''; curSlides=[];
     if(n){
-      s.photos.forEach(function(src,k){
-        var f=el('div','frame has-img');
-        var im=document.createElement('img');
-        im.src=src; im.alt=s.cat+': '+s.name+', zdjęcie '+(k+1)+' z '+n; im.loading='lazy'; im.decoding='async';
-        f.appendChild(im); sGrid.appendChild(f);
+      Promise.all(s.photos.map(probe)).then(function(rs){
+        if(tok!==renderTok) return;
+        layout(s.photos.map(function(src,k){
+          var f=el('div','shot');
+          var im=document.createElement('img');
+          im.src=src; im.alt=s.cat+': '+s.name+', zdjęcie '+(k+1)+' z '+n; im.loading='lazy'; im.decoding='async';
+          f.appendChild(im); f.tabIndex=0; f.setAttribute('role','button'); f.setAttribute('aria-label','Powiększ zdjęcie '+(k+1)+' z '+n); f.dataset.i=k;
+          curSlides[k]={src:src,alt:im.alt}; return {el:f,r:rs[k],o:(k<s.nland?'L':'P')};
+        }),curCols);
       });
     } else {
-      for(var k=0;k<6;k++){
-        var f=el('div','frame g'+s.g);
+      var ratios=[1.5,1.5,.667,1.5,1.5,.667,1.5,1.5,.667,1.5],items=[];
+      for(var k=0;k<10;k++){
+        var f=el('div','frame g'+(((s.g+k*3-1)%12)+1));
         f.setAttribute('role','img');
         f.setAttribute('aria-label','Zaślepka zdjęcia '+(k+1)+', sesja '+s.name);
         f.style.setProperty('--x',(25+((k*41+s.i*7)%55))+'%');
         f.style.setProperty('--y',(20+((k*27+s.i*13)%60))+'%');
         f.style.backgroundSize=(150+(k%3)*25)+'%';
         f.style.backgroundPosition=((k*37)%100)+'% '+((k*53)%100)+'%';
-        sGrid.appendChild(f);
+        f.tabIndex=0; f.setAttribute('role','button'); f.setAttribute('aria-label','Powiększ zdjęcie '+(k+1)); f.dataset.i=k;
+        curSlides[k]={ph:f,r:ratios[k]};
+        items.push({el:f,r:ratios[k],o:(ratios[k]>=1?'L':'P')});
       }
+      layout(items,curCols);
     }
     var list=byCat[s.cat];
     document.querySelector('.pn').style.display = list.length>1 ? '' : 'none';
     navLink(sPrev,'Poprzednia sesja',list[(s.i+list.length-1)%list.length]);
     navLink(sNext,'Następna sesja',list[(s.i+1)%list.length]);
   }
+
+  /* Powiększanie zdjęć */
+  var lb=document.getElementById('lb'), lbStage=document.getElementById('lb-stage'), lbCount=document.getElementById('lb-count'),
+      lbIdx=0, lbOpener=null, lbSlides=[];
+  function lbShow(i){
+    var n=lbSlides.length; if(!n) return;
+    lbIdx=(i+n)%n;
+    var sl=lbSlides[lbIdx]; lbStage.textContent='';
+    if(sl.src){
+      var im=document.createElement('img'); im.src=sl.src; im.alt=sl.alt||''; im.draggable=false; lbStage.appendChild(im);
+    } else {
+      var c=sl.ph.cloneNode(true); c.removeAttribute('tabindex'); c.removeAttribute('role'); c.removeAttribute('aria-label'); c.style.aspectRatio=String(sl.r);
+      c.style.width='min(100%, calc(('+(window.innerHeight-130)+'px) * '+sl.r+'))'; lbStage.appendChild(c);
+    }
+    lbCount.textContent=(lbIdx+1)+' / '+n;
+    lb.setAttribute('data-single',n<2?'1':'0');
+    [lbIdx-1,lbIdx+1].forEach(function(j){ var o=lbSlides[(j+n)%n]; if(o&&o.src){ var p=new Image(); p.src=o.src; } });
+  }
+  function lbOpen(i,opener){
+    var order=Array.prototype.slice.call(sGrid.querySelectorAll('[data-i]'));
+    lbSlides=order.map(function(n){ return curSlides[parseInt(n.dataset.i,10)]; });
+    i=Math.max(0,order.indexOf(opener));
+    lbOpener=opener||null; lb.hidden=false; document.body.style.overflow='hidden'; lbShow(i);
+    document.getElementById('lb-close').focus({preventScroll:true});
+  }
+  function lbClose(){
+    if(lb.hidden) return;
+    lb.hidden=true; document.body.style.overflow=''; lbStage.textContent='';
+    if(lbOpener && document.body.contains(lbOpener)) lbOpener.focus({preventScroll:true});
+  }
+  sGrid.addEventListener('click',function(e){
+    var t=e.target.closest('[data-i]'); if(t) lbOpen(parseInt(t.dataset.i,10),t);
+  });
+  sGrid.addEventListener('keydown',function(e){
+    if(e.key!=='Enter' && e.key!==' ') return;
+    var t=e.target.closest('[data-i]'); if(t){ e.preventDefault(); lbOpen(parseInt(t.dataset.i,10),t); }
+  });
+  document.getElementById('lb-close').addEventListener('click',lbClose);
+  document.getElementById('lb-prev').addEventListener('click',function(){ lbShow(lbIdx-1); });
+  document.getElementById('lb-next').addEventListener('click',function(){ lbShow(lbIdx+1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target===lbStage) lbClose(); });
+  document.addEventListener('keydown',function(e){
+    if(lb.hidden) return;
+    if(e.key==='Escape'){ e.preventDefault(); lbClose(); }
+    else if(e.key==='ArrowLeft'){ e.preventDefault(); lbShow(lbIdx-1); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); lbShow(lbIdx+1); }
+    else if(e.key==='Tab'){
+      var f=Array.prototype.filter.call(lb.querySelectorAll('button'),function(b){ return b.offsetParent!==null; });
+      if(!f.length) return;
+      var first=f[0], last=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  var tx=null;
+  lb.addEventListener('touchstart',function(e){ tx=e.touches.length===1?e.touches[0].clientX:null; },{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(tx===null) return;
+    var dx=e.changedTouches[0].clientX-tx; tx=null;
+    if(Math.abs(dx)>50) lbShow(lbIdx+(dx<0?1:-1));
+  });
+  window.addEventListener('hashchange',lbClose);
+
+  var rzT;
+  window.addEventListener('resize',function(){
+    clearTimeout(rzT);
+    rzT=setTimeout(function(){ if(curSession && current==='sesja' && colCount()!==curCols) renderSession(curSession); },150);
+  });
 
   /* Usługi, opinie i przyciski usług w formularzu */
   function renderServices(list){
@@ -684,7 +894,7 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
   }
 
   /* Strony: routing po hashu (#prace, #uslugi, #opinie, #faq, #sesja-<id>). #kontakt tylko przewija do formularza. */
-  var pages=['prace','uslugi','opinie','faq','polityka','sesja'], current='prace', savedY=0;
+  var pages=['prace','uslugi','o-mnie','opinie','faq','polityka','sesja'], current='prace', savedY=0;
   var links=document.querySelectorAll('nav a[data-page]');
 
   function setNav(name){
@@ -728,12 +938,13 @@ footer{padding:0 0 40px;font-size:13px;color:var(--muted)}
     loadJSON('content/faq.json','faq'),
     loadSettings(),
     loadJSON('content/availability.json','blocked'),
+    fetch('content/about.json',{cache:'no-cache'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ return j.about; }).catch(function(){ return FALLBACK.about; }),
     fetch('content/policy.json',{cache:'no-cache'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ return j.policy; }).catch(function(){ return FALLBACK.policy; })
   ]).then(function(r){
     applySettings(r[4]);
     var names=r[1].map(function(x){ return x&&x.name; }).filter(Boolean);
     if(names.length) CATEGORY_ORDER=names;
-    buildSessions(r[0]); renderServices(r[1]); renderQuotes(r[2]); renderChips(r[1]); updateLD(r[1]); renderFaq(r[3]); setBlocked(r[5]); renderPolicy(r[6]);
+    buildSessions(r[0]); renderServices(r[1]); renderQuotes(r[2]); renderChips(r[1]); updateLD(r[1]); renderFaq(r[3]); setBlocked(r[5]); renderAbout(r[6]); renderPolicy(r[7]);
     route();
   });
 
