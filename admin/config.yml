@@ -26,6 +26,8 @@ collections:
             fields:
               - { label: Logo (obraz), name: logo, widget: image, required: false, hint: "Najlepiej PNG z przezroczystym tłem, poziome. Puste = wyświetla się nazwa tekstem." }
               - { label: Ikona strony (favicon), name: favicon, widget: image, required: false, hint: "Kwadrat PNG, min. 192×192 px. Widać ją w karcie przeglądarki i w Google. Puste = ikona domyślna." }
+              - { label: Logo na stronie powitalnej (obraz), name: welcome_logo, widget: image, required: false, hint: "Duże logo zamiast napisu na stronie powitalnej. Najlepiej PNG z przezroczystym tłem, jasne na ciemnym. Puste = napis tekstem." }
+              - { label: Numer telefonu, name: phone, widget: string, required: false, hint: "np. +48 500 600 700. Widoczny w sekcji kontaktu jako link do dzwonienia. Puste = ukryty." }
               - { label: Nazwa (tekst w logo i na stronie powitalnej), name: site_name, widget: string }
               - { label: Podpis pod nazwą na stronie powitalnej, name: site_sub, widget: string }
               - { label: Tekst przycisku powitalnego, name: welcome_button, widget: string }
@@ -82,7 +84,8 @@ collections:
                 hint: "Kategorie to nazwy usług. Dodasz nową kategorię, dodając usługę w zakładce Usługi."
               - { label: Miejsce, name: place, widget: string, required: false, hint: "np. Mazury" }
               - { label: Data sesji, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
-              - { label: Zdjęcia, name: photos, widget: image, multiple: true, hint: "Pierwsze zdjęcie jest okładką sesji. Najlepiej poziome, ok. 2000 px szerokości." }
+              - { label: Zdjęcia poziome, name: photos, widget: image, multiple: true, required: false, hint: "Zdjęcia w poziomie. Pierwsze z nich jest okładką sesji. Proporcje 3:2, ok. 2000 px szerokości." }
+              - { label: Zdjęcia pionowe, name: photos_portrait, widget: image, multiple: true, required: false, hint: "Zdjęcia w pionie (proporcje 2:3, ok. 2000 px wysokości). Najlepiej dodawać je w parach z poziomymi: układ to 2 poziome po lewej i 1 pionowe po prawej." }
 
   - name: services
     label: Usługi
@@ -160,3 +163,19 @@ collections:
               - { label: Od dnia, name: from, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
               - { label: Do dnia (puste = tylko jeden dzień), name: to, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
               - { label: Notatka (niewidoczna na stronie), name: note, widget: string, required: false, hint: "np. ślub Ani i Marka" }
+
+  - name: about
+    label: O mnie
+    files:
+      - name: about
+        label: Sekcja O mnie
+        file: content/about.json
+        fields:
+          - label: O mnie
+            name: about
+            widget: object
+            fields:
+              - { label: Nagłówek strony, name: title, widget: string }
+              - { label: Krótki opis pod nagłówkiem, name: lead, widget: string, required: false }
+              - { label: Zdjęcie, name: photo, widget: image, required: false, hint: "Najlepiej pionowe (proporcje 4:5), np. portret fotografa. Puste = ciemna ramka." }
+              - { label: Tekst, name: text, widget: text, hint: "Pusta linia oddziela akapity. Pierwszy akapit wyświetla się większą czcionką. Pusty tekst i brak zdjęcia ukrywają zakładkę O mnie w menu." }
