@@ -2,6 +2,8 @@
   "settings": {
     "logo": "/uploads/LOGO white.png",
     "favicon": "/uploads/LOGO whie.png",
+    "welcome_logo": "/uploads/LOGO white.png",
+    "phone": "+48 506 842 344",
     "site_name": "Simonnee",
     "site_sub": "PHOTOGRAPHY",
     "welcome_button": "Witaj w moim świecie!",
